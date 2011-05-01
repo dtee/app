@@ -57,7 +57,7 @@ doctrine_mongo_db:
             server: mongodb://localhost:27017
             options:
                 connect: true
-    document_managers:
+    document_managers:  
         default:
             mappings:
                 ShadowBundle:
