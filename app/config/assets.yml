@@ -1,0 +1,38 @@
+css_bundle:
+  root_path: /home/dtee/symfony/src
+  less_import_paths: 
+    - "@OdlAssetBundle/Resources/public/css/lib/less"
+  resources:
+    -
+      local: "@OdlAssetBundle/Resources/public/css/lib/blue_print/screen.css"
+    -
+      local: "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.11.custom.css"
+    -
+      local: "@OdlAssetBundle/Resources/public/css/lib/jquery.jqGrid/ui.jqgrid.css"
+    -
+      local: "@ShadowBundle/Resources/public/css/layout.less"
+    - 
+      local: "@ShadowBundle/Resources/public/css/main.less"
+ 
+js_bundle:
+  root_path: /home/dtee/symfony/src
+  resources:
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery/jquery-1.5.2.js"
+#    -
+#      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-1.4.4.min.js"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-ui-1.8.11.custom.min.js"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.js"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.floatError.js"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.jqGrid/jquery.jqGrid.src.js"
+    - 
+      local: "@OdlAssetBundle/Resources/public/js/lib/highcharts/js/highcharts.src.js"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/app/fb.js"
+    -
+      local: "@ShadowBundle/Resources/public/js/main.js"
+      

@@ -1,0 +1,34 @@
+_home:
+    pattern:  /
+    defaults: 
+        _controller: AcmeDemoBundle:Welcome:index
+
+_demo_secured:
+    resource: "@AcmeDemoBundle/Controller/SecuredController.php"
+    type:     annotation
+
+_demo:
+    resource: "@AcmeDemoBundle/Controller/DemoController.php"
+    type:     annotation
+    prefix:   /demo
+
+_profile:
+    resource: "@AcmeDemoBundle/Controller/ProfileController.php"
+    type:     annotation
+    prefix:   /p
+    
+_asset:
+    resource: "@OdlAssetBundle/Controller/AssetController.php"
+    type:     annotation
+    prefix:   /asset
+ 
+_auth:
+    resource: "@AcmeDemoBundle/Controller/AuthController.php"
+    type:     annotation
+    prefix:   /auth
+
+_shadow:
+    resource: "@ShadowBundle/Controller/MainController.php"
+    type:     annotation
+    prefix:   /s
+ 

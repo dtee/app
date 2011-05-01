@@ -1,0 +1,204 @@
+zecco_ofx:
+  cash_transaction:
+    table: cash_transaction
+    className: Acme\Market\Documents\CashTransaction
+    data_path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVTRANLIST, INVBANKTRAN]
+    fields:
+      broker_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, BROKERID]
+        type: string
+      broker_account_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, ACCTID]
+        type: string
+      unique_id:
+        data_path: [STMTTRN, FITID]
+        type: string
+      name:
+        data_path: [STMTTRN, NAME]
+        type: string
+      memo:
+        data_path: [STMTTRN, MEMO]
+        type: string
+      fund:
+        data_path: [SUBACCTFUND]
+        type: string
+      amount: 
+        data_path: [STMTTRN, TRNAMT]
+        type: float
+      transaction_time:
+        data_path: [STMTTRN, DTPOSTED]
+        type: date
+      type:
+        value: deposit
+        type: string
+
+  buy:
+    table: stock_transaction
+    className: Acme\Market\Documents\StockTransaction
+    data_path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVTRANLIST, BUYSTOCK]
+    fields:
+      broker_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, BROKERID]
+      broker_account_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, ACCTID]
+      unique_id:
+        data_path: [INVBUY, INVTRAN, FITID]
+        type: string
+      order_date:
+        data_path: [INVBUY, INVTRAN, DTTRADE]
+        type: date
+      order_executed_date:
+        data_path: [INVBUY, INVTRAN, DTSETTLE]
+        type: date
+      quantity:
+        data_path: [INVBUY, UNITS]
+        type: int
+      price:
+        data_path: [INVBUY, UNITPRICE]
+        type: float
+      total:
+        data_path: [INVBUY, TOTAL]
+        type: int
+      type:
+        value: buy
+      fees: 
+        data_path: [INVBUY, FEES]
+        optional: true
+        type: float
+      fund:
+        data_path: [INVBUY, SUBACCTFUND]
+        type: string
+
+  sell:
+    table: stock_transaction
+    className: Acme\Market\Documents\StockTransaction
+    data_path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVTRANLIST, SELLSTOCK]
+    fields:
+      broker_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, BROKERID]
+        type: string
+      broker_account_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, ACCTID]
+        type: string
+      unique_id:
+        data_path: [INVSELL, INVTRAN, FITID]
+        type: string
+      order_date:
+        data_path: [INVSELL, INVTRAN, DTTRADE]
+        type: date
+      order_executed_date:
+        data_path: [INVSELL, INVTRAN, DTSETTLE]
+        type: date
+      quantity:
+        data_path: [INVSELL, UNITS]
+        formatter: abs
+        type: int
+      price:
+        data_path: [INVSELL, UNITPRICE]
+        type: float
+      total:
+        data_path: [INVSELL, TOTAL]
+        type: int
+      type:
+        value: sell
+        type: string
+      fees: 
+        data_path: [INVSELL, FEES]
+        optional: false
+        type: float
+      fund:
+        data_path: [INVSELL, SUBACCTFUND]
+        type: string
+      commission:
+        data_path: [INVSELL, COMMISSION]
+        type: float
+
+  buy_option:
+    table: option_transaction
+    className: Acme\Market\Documents\OptionTransaction
+    data_path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVTRANLIST, BUYSTOCK]
+    fields:
+      broker_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, BROKERID]
+        type: string
+      broker_account_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, ACCTID]
+        type: string
+      unique_id:
+        data_path: [INVBUY, INVTRAN, FITID]
+        type: string
+      order_date:
+        data_path: [INVBUY, INVTRAN, DTTRADE]
+        type: date
+      order_executed_date:
+        data_path: [INVBUY, INVTRAN, DTSETTLE]
+        type: date
+      quantity:
+        data_path: [INVBUY, UNITS]
+        type: int
+      price:
+        data_path: [INVBUY, UNITPRICE]
+        type: float
+      total:
+        data_path: [INVBUY, TOTAL]
+        type: int
+      type:
+        value: buy
+        type: string
+      fees: 
+        data_path: [INVBUY, FEES]
+        optional: true
+        type: float
+      fund:
+        data_path: [OPTBUYTYPE]
+        type: string
+      contract:
+        data_path: [SHPERCTRCT]
+        type: string
+
+  sell_option:
+    table: option_transaction
+    className: Acme\Market\Documents\OptionTransaction
+    data_path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVTRANLIST, SELLSTOCK]
+    fields:
+      broker_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, BROKERID]
+        type: string
+      broker_account_id:
+        path: [INVSTMTMSGSRSV1, INVSTMTTRNRS, INVSTMTRS, INVACCTFROM, ACCTID]
+        type: string
+      unique_id:
+        data_path: [INVSELL, INVTRAN, FITID]
+        type: string
+      order_date:
+        data_path: [INVSELL, INVTRAN, DTTRADE]
+        type: date
+      order_executed_date:
+        data_path: [INVSELL, INVTRAN, DTSETTLE]
+        type: date
+      quantity:
+        data_path: [INVSELL, UNITS]
+        type: int
+        formatter: abs
+      price:
+        data_path: [INVSELL, UNITPRICE]
+        type: float
+      total:
+        data_path: [INVSELL, TOTAL]
+        type: int
+      type:
+        value: sell
+        type: string
+      fees: 
+        data_path: [INVSELL, FEES]
+        optional: false
+        type: float
+      fund:
+        data_path: [INVSELL, SUBACCTFUND]
+        type: string
+      commission:
+        data_path: [INVSELL, COMMISSION]
+        type: float
+      contract:
+        data_path: [SHPERCTRCT]
+        type: int
