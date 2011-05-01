@@ -28,7 +28,7 @@ function v($arg, $showTrace = true)
 		}
 	}
 
-	xdebug_var_dump($arg);
+	var_dump($arg);
 }
 
 function ve($arg)
