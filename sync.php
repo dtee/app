@@ -35,25 +35,33 @@ $gitRepositories = array(
 	'symfony' => array(
 		'url' => 'git://github.com/symfony/symfony.git'),
 
-	// Node.js
+/*	// Node.js
 	'node' => array(
 		'url' => 'https://github.com/joyent/node.git',
-		'path' => 'node/node'),
+		'path' => 'vendor/node/node'),
 
 	'npm' => array(
 		'url' => 'http://github.com/isaacs/npm.git',
-		'path' => 'node/npm'),
+		'path' => 'vendor/node/npm'), */
 
 	// Bundles
 	'frameworkextra' => array(
 		'url' => 'git://github.com/sensio/SensioFrameworkExtraBundle.git',
-		'path' => 'bundles/Sensio/Bundle/FrameworkExtraBundle'),
+		'path' => 'vendor/bundles/Sensio/Bundle/FrameworkExtraBundle'),
 	'doctrine-mongodb-bundle' => array(
 		'url' => 'git://github.com/symfony/DoctrineMongoDBBundle.git',
-		'path' => 'bundles/Symfony/Bundle/DoctrineMongoDBBundle'),
+		'path' => 'vendor/bundles/Symfony/Bundle/DoctrineMongoDBBundle'),
 	'jms-security-extra-bundle' => array(
 		'url' => 'git://github.com/schmittjoh/SecurityExtraBundle.git',
-		'path' => 'bundles/JMS/SecurityExtraBundle'),
+		'path' => 'vendor/bundles/JMS/SecurityExtraBundle'),
+
+	// My bundles
+	'asset' => array(
+		'url' => 'git@github.com:dtee/asset.git',
+		'path' => 'src/Odl/AssetBundle'),
+	'shadow' => array(
+		'url' => 'git@github.com:dtee/ShadowBundle.git',
+		'path' => 'src/Odl/ShadowBundle'),
 
 	// css and javascript
 /*	'blueprint-less' => array(
@@ -61,12 +69,11 @@ $gitRepositories = array(
 		'path' => '_css/blueprint-less'), */
 );
 
-
 $yumInstall = array(
 	'open-ssl-devel', 	// Node.js
 );
 
-$installPath = '/home/dtee/symfony/vendor/';
+$installPath =  __DIR__ . '/';
 foreach ($gitRepositories as $key => $info)
 {
 	$version = 'origin/HEAD';
@@ -79,17 +86,28 @@ foreach ($gitRepositories as $key => $info)
 	}
 	else
 	{
-		$directoryPath = $installPath . $key;
+		$directoryPath = $installPath . 'vendor/' . $key;
 	}
 
 	if (is_dir($directoryPath))
 	{
+		// Do we upgrade??
 		echo "Target: {$key}, " . $directoryPath . " exists\n";
+		$command = "git pull";
+		echo exec($command);
 	}
 	else
 	{
 		echo "Target: " . $directoryPath . "\n";
 		$clone = "git clone {$info['url']} {$directoryPath}";
-		exec($clone);
+		echo $clone . "\n";
+		echo exec($clone) . "\n";
+		
+		if (isset($info['version']))
+		{
+			$command = "git --exec-path={$directoryPath} reset --hard {$info['version']}";
+			echo $command;
+			echo exec($command);
+		}
 	}
 }

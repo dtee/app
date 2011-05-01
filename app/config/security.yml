@@ -9,19 +9,16 @@ security:
 
     providers:
         default_provider:
-            providers: [in_memory, mongo_provider]
+            providers: [in_memory]
             
         in_memory:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                 admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
-        mongo_provider:
-           id: mongodbo.username_password_provider
+#        mongo_provider:
+#           id: mongodbo.username_password_provider
            
-#    factories:
-#        facebook: %kernel.root_dir%/../src/Acme/FacebookBundle/Resources/config/security_factories.xml
-
     firewalls:
         profiler:
             pattern:  ^/_profiler
@@ -30,22 +27,6 @@ security:
         wdt:
             pattern:  ^/_wdt
             security: false
-
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
-
-        secured_area:
-            pattern:    ^/demo/secured/
-            form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
-            logout:
-                path:   /demo/secured/logout
-                target: /demo/
-#            anonymous: ~
-#            http_basic:
-#                realm: "Secured Demo Area"
             
         all:
             pattern: ^/.*
