@@ -1,4 +1,4 @@
-#!/service/local/apache/bin/php
+#!/usr/bin/env php
 
 <?php
 $gitRepositories = array(
@@ -21,6 +21,8 @@ $gitRepositories = array(
 		'url' => 'git://github.com/doctrine/migrations.git'),
 	'doctrine-extension' => array(
 		'url' => 'git://github.com/l3pp4rd/DoctrineExtensions.git'),
+	'doctrine-fixtures' => array(
+		'url' => 'https://github.com/doctrine/data-fixtures.git'),
 	'monolog' => array(
 		'url' => 'git://github.com/Seldaek/monolog.git'),
 	'swiftmailer' => array(
@@ -54,6 +56,9 @@ $gitRepositories = array(
 	'jms-security-extra-bundle' => array(
 		'url' => 'git://github.com/schmittjoh/SecurityExtraBundle.git',
 		'path' => 'vendor/bundles/JMS/SecurityExtraBundle'),
+	'DoctrineFixturesBundle' => array(
+		'url' => 'https://github.com/symfony/DoctrineFixturesBundle.git',
+		'path' => 'vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle'),
 
 	// My bundles
 	'asset' => array(
