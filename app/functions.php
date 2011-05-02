@@ -2,7 +2,17 @@
 ini_set('xdebug.var_display_max_depth', 5);
 date_default_timezone_set('America/Los_Angeles');
 
-ini_set('html_errors', 'On');
+// Check to see if it running from console
+if (!defined('STDIN'))
+{
+	ini_set('html_errors', 'On');
+}
+else
+{
+	ini_set('xdebug.var_display_max_depth', 2);
+	ini_set('html_errors', 'Off');
+}
+
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
     $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest')
 {
