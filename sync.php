@@ -35,7 +35,8 @@ $gitRepositories = array(
 	'lessc' => array(
 		'url' => 'git://github.com/leafo/lessphp.git'),
 	'symfony' => array(
-		'url' => 'git://github.com/symfony/symfony.git'),
+		'url' => 'git@github.com:dtee/symfony.git',
+		'upstream_url' => 'git://github.com/symfony/symfony.git'),
 
 /*	// Node.js
 	'node' => array(
