@@ -13,7 +13,8 @@ $gitRepositories = array(
 	'doctrine-mongodb-odm' => array(
 		'url' => 'git://github.com/doctrine/mongodb-odm.git'),
 	'doctrine-mongodb' => array(
-		'url' => 'git://github.com/doctrine/mongodb.git'),
+		'url' => 'git@github.com:dtee/mongodb-odm.git',
+		'main_url' => 'git://github.com/doctrine/mongodb.git'),
 	'doctrine-dbal' => array(
 		'url' => 'git://github.com/doctrine/dbal.git',
 		'version' => '2.0.4'),
@@ -99,8 +100,20 @@ foreach ($gitRepositories as $key => $info)
 	{
 		// Do we upgrade??
 		echo "Target: {$key}, " . $directoryPath . " exists\n";
-		$command = "git pull";
-		echo exec($command);
+		//$command = "git pull";
+		//echo exec($command);
+		
+		// Make sure the target url is still the same.
+		echo exec("cd {$directoryPath}");
+		echo exec("pwd");
+		echo exec("git remote rm origin");
+		echo exec("git remote rm upstream");
+		echo exec("git remote add origin {$info['url']}");
+		
+		if (isset($info['main_url']))
+		{
+			echo exec("git remote add upstream {$info['main_url']}"); 
+		}
 	}
 	else
 	{
@@ -111,9 +124,12 @@ foreach ($gitRepositories as $key => $info)
 		
 		if (isset($info['version']))
 		{
-			$command = "git --exec-path={$directoryPath} reset --hard {$info['version']}";
+			echo exec("cd {$directoryPath}");
+			$command = "git reset --hard {$info['version']}";
 			echo $command;
 			echo exec($command);
 		}
 	}
+	
+	echo exec("cd {$installPath}");
 }
