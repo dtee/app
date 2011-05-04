@@ -37,7 +37,7 @@ $gitRepositories = array(
 		'url' => 'git://github.com/leafo/lessphp.git'),
 	'symfony' => array(
 		'url' => 'git@github.com:dtee/symfony.git',
-		'upstream_url' => 'git://github.com/symfony/symfony.git'),
+		'main_url' => 'git://github.com/symfony/symfony.git'),
 
 /*	// Node.js
 	'node' => array(
@@ -80,6 +80,11 @@ $yumInstall = array(
 	'open-ssl-devel', 	// Node.js
 );
 
+function print_shell_exec($cmd) {
+	echo $cmd . "\n";
+	echo shell_exec($cmd);
+}
+
 $installPath =  __DIR__ . '/';
 foreach ($gitRepositories as $key => $info)
 {
@@ -101,35 +106,37 @@ foreach ($gitRepositories as $key => $info)
 		// Do we upgrade??
 		echo "Target: {$key}, " . $directoryPath . " exists\n";
 		//$command = "git pull";
-		//echo exec($command);
-		
+		//echo print_shell_exec($command);
+
 		// Make sure the target url is still the same.
-		echo exec("cd {$directoryPath}");
-		echo exec("pwd");
-		echo exec("git remote rm origin");
-		echo exec("git remote rm upstream");
-		echo exec("git remote add origin {$info['url']}");
-		
+		chdir($directoryPath);
+		echo "path: " . getcwd() . "\n";
+		echo print_shell_exec("git remote rm origin");
+		echo print_shell_exec("git remote rm upstream");
+		echo print_shell_exec("git remote add origin {$info['url']}");
+
 		if (isset($info['main_url']))
 		{
-			echo exec("git remote add upstream {$info['main_url']}"); 
+			echo print_shell_exec("git remote add upstream {$info['main_url']}");
 		}
+		echo print_shell_exec("git pull origin");
 	}
 	else
 	{
 		echo "Target: " . $directoryPath . "\n";
 		$clone = "git clone {$info['url']} {$directoryPath}";
 		echo $clone . "\n";
-		echo exec($clone) . "\n";
-		
+		echo print_shell_exec($clone) . "\n";
+
 		if (isset($info['version']))
 		{
-			echo exec("cd {$directoryPath}");
+			echo print_shell_exec("cd {$directoryPath}");
 			$command = "git reset --hard {$info['version']}";
 			echo $command;
-			echo exec($command);
+			echo print_shell_exec($command);
 		}
 	}
-	
-	echo exec("cd {$installPath}");
+
+	echo "---------- End {$key} ----------\n\n";
+	chdir($installPath);
 }
