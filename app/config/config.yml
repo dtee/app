@@ -48,7 +48,7 @@ assetic:
         # yui_css:
         #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
                     
-doctrine_mongo_db:
+doctrine_mongodb:
     default_database: hello_%kernel.environment%
     auto_generate_hydrator_classes: true
     auto_generate_proxy_classes: true
