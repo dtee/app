@@ -31,8 +31,8 @@ js_bundle:
       local: "@OdlAssetBundle/Resources/public/js/lib/jquery.jqGrid/jquery.jqGrid.src.js"
     - 
       local: "@OdlAssetBundle/Resources/public/js/lib/highcharts/js/highcharts.src.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/app/fb.js"
+#    -
+#      local: "@OdlAssetBundle/Resources/public/js/app/fb.js"
     -
       local: "@ShadowBundle/Resources/public/js/main.js"
       
