@@ -20,4 +20,4 @@ app/logs/
 app/cache/
 src/
 vendor/
-
+web/bundles/
