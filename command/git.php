@@ -66,10 +66,12 @@ $gitRepositories = array(
 		'url' => 'git@github.com:dtee/asset.git',
 		'path' => 'src/Odl/AssetBundle',
 		'type' => 'src'),
+
 	'auth' => array(
 		'url' => 'git@github.com:dtee/auth.git',
 		'path' => 'src/Odl/AuthBundle',
 		'type' => 'src'),
+
 	'shadow' => array(
 		'url' => 'git@github.com:dtee/ShadowBundle.git',
 		'path' => 'src/Odl/ShadowBundle',

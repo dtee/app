@@ -127,13 +127,13 @@ class GitRepo {
 	{
 		if ($this->isInstalled())
 		{
-			chdir($this->absolutePath);
 			echo "{$this->key} is already installed.";
 			echo "---------- End Upgrade: {$key} ----------\n\n";
 			return;
 		}
 		
 		echo print_shell_exec("git clone {$this->remotes['origin']} {$this->absolutePath}");
+
 	}
 	
 	public function isInstalled()
