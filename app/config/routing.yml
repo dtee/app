@@ -8,3 +8,7 @@ _shadow:
     type:     annotation
     prefix:  /
  
+_auth: 
+    resource: "@OdlAuthBundle/Controller/AuthController.php"
+    type:     annotation
+    prefix:  /auth

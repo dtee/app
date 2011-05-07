@@ -16,17 +16,18 @@ class AppKernel extends Kernel
             // new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
-            
+
             // Handle assets
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            
+
             //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             //new Acme\FacebookBundle\FacebookBundle(),
             //new Acme\DemoBundle\AcmeDemoBundle(),
 
             # Odl bundles
             new Odl\AssetBundle\OdlAssetBundle(),
+            new Odl\AuthBundle\OdlAuthBundle(),
             new Odl\ShadowBundle\ShadowBundle(),
         );
 
