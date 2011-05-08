@@ -43,6 +43,9 @@ foreach ($gitRepositories as $key => $info)
 		echo print_shell_exec("git remote rm upstream");
 		echo print_shell_exec("git remote add origin {$info['url']}");
 
+		echo print_shell_exec("git config branch.master.remote origin");
+		echo print_shell_exec("git config branch.master.merge refs/heads/master");
+		
 		if (isset($info['main_url']))
 		{
 			echo print_shell_exec("git remote add upstream {$info['main_url']}");
