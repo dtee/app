@@ -63,6 +63,9 @@ doctrine_mongodb:
                 ShadowBundle:
                     type: annotation
                     dir: Documents/
+                OdlAuthBundle:
+                    type: annotation
+                    dir: Documents/
                 
 
 # Swiftmailer Configuration
