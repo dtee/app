@@ -48,13 +48,13 @@ $gitRepositories = array(
 		'path' => 'vendor/node/npm'), */
 
 	// Bundles
-	'frameworkextra' => array(
+	'FrameworkExtraBundle' => array(
 		'url' => 'git://github.com/sensio/SensioFrameworkExtraBundle.git',
 		'path' => 'vendor/bundles/Sensio/Bundle/FrameworkExtraBundle'),
-	'doctrine-mongodb-bundle' => array(
+	'DoctrineMongoDBBundle' => array(
 		'url' => 'git://github.com/symfony/DoctrineMongoDBBundle.git',
 		'path' => 'vendor/bundles/Symfony/Bundle/DoctrineMongoDBBundle'),
-	'jms-security-extra-bundle' => array(
+	'SecurityExtraBundle' => array(
 		'url' => 'git://github.com/schmittjoh/SecurityExtraBundle.git',
 		'path' => 'vendor/bundles/JMS/SecurityExtraBundle'),
 	'DoctrineFixturesBundle' => array(

@@ -362,13 +362,16 @@ class ErrorHandler
         E_RECOVERABLE_ERROR => 'Catchable Fatal Error',
     );
     private $level;
-    public function __construct($level = null)
+    static public function register($level = null)
+    {
+        $handler = new static();
+        $handler->setLevel($level);
+        set_error_handler(array($handler, 'handle'));
+        return $handler;
+    }
+    public function setLevel($level)
     {
         $this->level = null === $level ? error_reporting() : $level;
-    }
-    public function register()
-    {
-        set_error_handler(array($this, 'handle'));
     }
     public function handle($level, $message, $file, $line, $context)
     {
@@ -568,12 +571,9 @@ abstract class Kernel implements KernelInterface
         $this->name = preg_replace('/[^a-zA-Z0-9_]+/', '', basename($this->rootDir));
         $this->classes = array();
         if ($this->debug) {
-            ini_set('display_errors', 1);
-            error_reporting(-1);
             $this->startTime = microtime(true);
-        } else {
-            ini_set('display_errors', 0);
         }
+        $this->init();
     }
     public function __clone()
     {
@@ -582,6 +582,9 @@ abstract class Kernel implements KernelInterface
         }
         $this->booted = false;
         $this->container = null;
+    }
+    public function init()
+    {
     }
     public function boot()
     {
@@ -647,8 +650,11 @@ abstract class Kernel implements KernelInterface
         if (false !== strpos($name, '..')) {
             throw new \RuntimeException(sprintf('File name "%s" contains invalid characters (..).', $name));
         }
-        $name = substr($name, 1);
-        list($bundleName, $path) = explode('/', $name, 2);
+        $bundleName = substr($name, 1);
+        $path = '';
+        if (false !== strpos($bundleName, '/')) {
+            list($bundleName, $path) = explode('/', $bundleName, 2);
+        }
         $isResource = 0 === strpos($path, 'Resources') && null !== $dir;
         $overridePath = substr($path, 9);
         $resourceBundle = null;
@@ -679,7 +685,7 @@ abstract class Kernel implements KernelInterface
         if (count($files) > 0) {
             return $first && $isResource ? $files[0] : $files;
         }
-        throw new \InvalidArgumentException(sprintf('Unable to find file "@%s".', $name));
+        throw new \InvalidArgumentException(sprintf('Unable to find file "%s".', $name));
     }
     public function getName()
     {
@@ -1474,7 +1480,7 @@ class Request
     }
     public function getPort()
     {
-        return $this->server->get('SERVER_PORT');
+        return $this->headers->get('X-Forwarded-Port') ?: $this->server->get('SERVER_PORT');
     }
     public function getHttpHost()
     {
@@ -1521,8 +1527,8 @@ class Request
                 $parts[] = $segment;
                 $order[] = $segment;
             } else {
-                $tmp = explode('=', urldecode($segment), 2);
-                $parts[] = urlencode($tmp[0]).'='.urlencode($tmp[1]);
+                $tmp = explode('=', rawurldecode($segment), 2);
+                $parts[] = rawurlencode($tmp[0]).'='.rawurlencode($tmp[1]);
                 $order[] = $tmp[0];
             }
         }
