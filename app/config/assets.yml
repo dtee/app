@@ -13,6 +13,8 @@ css_bundle:
       local: "@ShadowBundle/Resources/public/css/layout.less"
     - 
       local: "@ShadowBundle/Resources/public/css/main.less"
+    - 
+      local: "@OdlAuthBundle/Resources/public/css/form.less"
  
 js_bundle:
   root_path: /home/dtee/symfony/src
