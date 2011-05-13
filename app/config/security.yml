@@ -9,15 +9,15 @@ security:
 
     providers:
         default_provider:
-            providers: [in_memory]
+            providers: [in_memory, mongo_provider]
             
         in_memory:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }
                 admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
-#        mongo_provider:
-#           id: mongodbo.username_password_provider
+        mongo_provider:
+           id: auth.mongodb.username_password_provider
            
     firewalls:
         profiler:
@@ -29,7 +29,8 @@ security:
             security: false
             
         all:
-            pattern: ^/.*
+            form_login:
+                provider: fos_userbundle
             anonymous: ~
 
     access_control:

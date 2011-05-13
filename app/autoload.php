@@ -15,21 +15,24 @@ $loader->registerNamespaces(array(
 	'Doctrine\\ODM'	   => __DIR__.'/../vendor/doctrine-mongodb-odm/lib',
 	'Doctrine\\MongoDB'	   => __DIR__.'/../vendor/doctrine-mongodb/lib',
 	'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
-		
+
 	'Gedmo'			   => __DIR__.'/../vendor/doctrine-extension/lib',
     'Monolog'          => __DIR__.'/../vendor/monolog/src',
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
-	
+
 	// Bundles
     'Acme'             => __DIR__.'/../src',
 	'Odl'				=> __DIR__.'/../src',
 	'Grid'			    => __DIR__.'/../src/Acme',
+	'FOS' => __DIR__.'/../vendor/bundles',
 ));
+
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
     'Swift_'           => __DIR__.'/../vendor/swiftmailer/lib/classes',
 ));
+
 $loader->register();
 $loader->registerPrefixFallback(array(
     __DIR__.'/../vendor/symfony/src/Symfony/Component/Locale/Resources/stubs',

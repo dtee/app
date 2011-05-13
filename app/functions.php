@@ -26,7 +26,7 @@ function v($arg, $showTrace = true)
 		$traces = debug_backtrace();
 		foreach ($traces as $index => $trace)
 		{
-			if ($index != 0 || !isset($trace['file']))
+			if ($index <= 0 || !isset($trace['file']))
 			{
 				continue;
 			}

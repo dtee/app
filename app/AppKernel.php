@@ -25,6 +25,11 @@ class AppKernel extends Kernel
             //new Acme\FacebookBundle\FacebookBundle(),
             //new Acme\DemoBundle\AcmeDemoBundle(),
 
+            # FOS Bundles
+            new FOS\UserBundle\FOSUserBundle(),
+            // new FOS\FacebookBundle\FOSFacebookBundle(),
+            // new FOS\TwitterBundle\FOSTwitterBundle(),
+
             # Odl bundles
             new Odl\AssetBundle\OdlAssetBundle(),
             new Odl\AuthBundle\OdlAuthBundle(),

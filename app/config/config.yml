@@ -28,7 +28,14 @@ framework:
         default_locale: "%locale%"
         lifetime:       3600
         auto_start:     true
-
+        
+fos_user:
+    db_driver: mongodb
+    firewall_name: all
+    class:
+        model:
+            user: Odl\AuthBundle\Documents\UserAuth
+            
 # Twig Configuration
 twig:
     debug:            %kernel.debug%

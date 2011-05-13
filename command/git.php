@@ -61,6 +61,17 @@ $gitRepositories = array(
 		'url' => 'https://github.com/symfony/DoctrineFixturesBundle.git',
 		'path' => 'vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle'),
 
+	// FOS Bundles
+	'UserBundle' => array(
+		'url' => 'git://github.com/FriendsOfSymfony/UserBundle.git',
+		'path' => 'vendor/bundles/FOS/UserBundle'),
+	'TwitterBundle' => array(
+		'url' => 'git://github.com/FriendsOfSymfony/TwitterBundle.git',
+		'path' => 'vendor/bundles/FOS/TwitterBundle'),
+	'FacebookBundle' => array(
+		'url' => 'git://github.com/FriendsOfSymfony/FacebookBundle.git',
+		'path' => 'vendor/bundles/FOS/FacebookBundle'),
+
 	// My bundles
 	'asset' => array(
 		'url' => 'git@github.com:dtee/asset.git',
