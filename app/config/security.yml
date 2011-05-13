@@ -11,6 +11,9 @@ security:
         default_provider:
             providers: [in_memory, mongo_provider]
             
+        fos_userbundle:
+            id: fos_user.user_manager
+            
         in_memory:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }

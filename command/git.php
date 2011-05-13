@@ -1,8 +1,6 @@
 <?php
 $gitRepositories = array(
-	'assetic' => array(
-		'url' => 'git://github.com/dtee/assetic.git',
-		'main_url' => 'git://github.com/kriswallsmith/assetic.git'),
+	# Doctrine
 	'doctrine-common' => array(
 		'url' => 'git://github.com/doctrine/common.git'),
 	'doctrine-orm' => array(
@@ -23,6 +21,11 @@ $gitRepositories = array(
 		'url' => 'git://github.com/l3pp4rd/DoctrineExtensions.git'),
 	'doctrine-fixtures' => array(
 		'url' => 'https://github.com/doctrine/data-fixtures.git'),
+
+	# symfony components
+	'assetic' => array(
+		'url' => 'git://github.com/dtee/assetic.git',
+		'main_url' => 'git://github.com/kriswallsmith/assetic.git'),
 	'monolog' => array(
 		'url' => 'git://github.com/Seldaek/monolog.git'),
 	'swiftmailer' => array(
@@ -54,6 +57,9 @@ $gitRepositories = array(
 	'DoctrineMongoDBBundle' => array(
 		'url' => 'git://github.com/symfony/DoctrineMongoDBBundle.git',
 		'path' => 'vendor/bundles/Symfony/Bundle/DoctrineMongoDBBundle'),
+	'DoctrineExtensionsBundle' => array(
+		'url' => 'https://github.com/stof/DoctrineExtensionsBundle.git',
+		'path' => 'vendor/bundles/Stof/DoctrineExtensionsBundle'),
 	'SecurityExtraBundle' => array(
 		'url' => 'git://github.com/schmittjoh/SecurityExtraBundle.git',
 		'path' => 'vendor/bundles/JMS/SecurityExtraBundle'),

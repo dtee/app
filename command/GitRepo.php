@@ -127,8 +127,8 @@ class GitRepo {
 	{
 		if ($this->isInstalled())
 		{
-			echo "{$this->key} is already installed.";
-			echo "---------- End Upgrade: {$key} ----------\n\n";
+			echo "{$this->key} is already installed.\n";
+			echo "---------- End Upgrade: {$this->key} ----------\n\n";
 			return;
 		}
 		

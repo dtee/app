@@ -24,7 +24,8 @@ $loader->registerNamespaces(array(
     'Acme'             => __DIR__.'/../src',
 	'Odl'				=> __DIR__.'/../src',
 	'Grid'			    => __DIR__.'/../src/Acme',
-	'FOS' => __DIR__.'/../vendor/bundles',
+	'FOS' 			=> __DIR__.'/../vendor/bundles',
+	'Stof' 			=> __DIR__.'/../vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(
