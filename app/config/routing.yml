@@ -13,9 +13,8 @@ _auth:
     type:     annotation
     prefix:  /auth
     
-fos_user_user:
-    resource: "@FOSUserBundle/Resources/config/routing/user.xml"
-    prefix: /user
+_user: 
+    resource: "@OdlAuthBundle/Controller/UserController.php"
+    type:     annotation
+    prefix:  /user
     
-fos_user_security:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"

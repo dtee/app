@@ -9,16 +9,17 @@ $loader->registerNamespaces(array(
 		__DIR__.'/../vendor/bundles',),
     'Sensio'           => __DIR__.'/../vendor/bundles',
     'JMS'              => __DIR__.'/../vendor/bundles',
+    'Monolog'          => __DIR__.'/../vendor/monolog/src',
+    'Assetic'          => __DIR__.'/../vendor/assetic/src',
+		
+	# Doctrine
     'Doctrine\\Common' => __DIR__.'/../vendor/doctrine-common/lib',
     'Doctrine\\DBAL'   => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine'         => __DIR__.'/../vendor/doctrine-orm/lib',
 	'Doctrine\\ODM'	   => __DIR__.'/../vendor/doctrine-mongodb-odm/lib',
 	'Doctrine\\MongoDB'	   => __DIR__.'/../vendor/doctrine-mongodb/lib',
 	'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
-
 	'Gedmo'			   => __DIR__.'/../vendor/doctrine-extension/lib',
-    'Monolog'          => __DIR__.'/../vendor/monolog/src',
-    'Assetic'          => __DIR__.'/../vendor/assetic/src',
 
 	// Bundles
     'Acme'             => __DIR__.'/../src',

@@ -9,7 +9,7 @@ security:
 
     providers:
         default_provider:
-            providers: [in_memory, mongo_provider]
+            providers: [in_memory, mongo_provider, fos_userbundle]
             
         fos_userbundle:
             id: fos_user.user_manager
@@ -32,8 +32,27 @@ security:
             security: false
             
         all:
+            pattern:    /.*
+            security: true
+            provider: fos_userbundle
             form_login:
                 provider: fos_userbundle
+            remember_me:
+                key: dtee-wooshed
+                name: auth
+                lifetime: 3600 # in seconds
+                path: /auth
+                domain: wooshed.com
+                secure: true
+                httponly: true
+                always_remember_me: true
+                remember_me_parameter: _remember_me
+            logout:
+                path:   /auth/logout
+                target: /
+                invalidate_session: true
+                delete_cookies:
+                    a: { path: /auth, domain: wooshed.com }
             anonymous: ~
 
     access_control:

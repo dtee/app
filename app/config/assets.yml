@@ -9,12 +9,12 @@ css_bundle:
       local: "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.11.custom.css"
     -
       local: "@OdlAssetBundle/Resources/public/css/lib/jquery.jqGrid/ui.jqgrid.css"
+    - 
+      local: "@OdlAuthBundle/Resources/public/css/form.less"
     -
       local: "@ShadowBundle/Resources/public/css/layout.less"
     - 
       local: "@ShadowBundle/Resources/public/css/main.less"
-    - 
-      local: "@OdlAuthBundle/Resources/public/css/form.less"
  
 js_bundle:
   root_path: /home/dtee/symfony/src
