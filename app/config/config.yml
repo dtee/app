@@ -35,7 +35,18 @@ fos_user:
     class:
         model:
             user: Odl\AuthBundle\Documents\UserAuth
-            
+doctrine:
+    dbal:
+        default_connection:       default
+        connections:
+            default:
+                dbname:           user
+                user:             root
+                password:         null
+                host:             localhost
+    orm:
+        auto_mapping: true
+                 
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
@@ -73,6 +84,12 @@ doctrine_mongodb:
                     type: annotation
                     dir: Documents/
                 
+fos_facebook:
+      file:   %kernel.root_dir%/../vendor/facebook/src/facebook.php
+      alias:  facebook
+      app_id: 170752334654
+      secret: 4261ef8a2167c3ce7bbe8ad03d6b5361
+      cookie: true
 
 # Swiftmailer Configuration
 swiftmailer:

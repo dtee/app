@@ -15,7 +15,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             
 			# Doctrine
-            // new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\DoctrineMongoDBBundle\DoctrineMongoDBBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
@@ -30,7 +30,7 @@ class AppKernel extends Kernel
 
             # FOS Bundles
             new FOS\UserBundle\FOSUserBundle(),
-            // new FOS\FacebookBundle\FOSFacebookBundle(),
+            new FOS\FacebookBundle\FOSFacebookBundle(),
             // new FOS\TwitterBundle\FOSTwitterBundle(),
 
             # Odl bundles

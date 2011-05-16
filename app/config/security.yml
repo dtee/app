@@ -54,6 +54,9 @@ security:
                 delete_cookies:
                     a: { path: /auth, domain: wooshed.com }
             anonymous: ~
-
+            
+    acl:
+        connection: default
+        
     access_control:
         #- { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
