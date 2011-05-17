@@ -7,6 +7,7 @@ class GitRepo {
 	protected $remotes;
 	protected $selectedBranch = 'master';
 	protected $type;
+	protected $subModule = false;
 
 	public function __construct($key, $absolutePath, $parentGitPath) {
 		$this->key = $key;
@@ -19,6 +20,10 @@ class GitRepo {
 	 */
 	public function getType() {
 		return $this->type;
+	}
+	
+	public function setSubModule($exists) {
+		$this->subModule = $exists;
 	}
 
 	/**
@@ -134,6 +139,9 @@ class GitRepo {
 		
 		echo print_shell_exec("git clone {$this->remotes['origin']} {$this->absolutePath}");
 
+		if ($this->subModule) {
+			echo print_shell_exec("git submodule update");
+		}
 	}
 	
 	public function isInstalled()

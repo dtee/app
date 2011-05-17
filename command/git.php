@@ -1,17 +1,9 @@
 <?php
 $gitRepositories = array(
 	# Doctrine
-	'doctrine-common' => array(
-		'url' => 'git://github.com/doctrine/common.git'),
-	'doctrine-orm' => array(
-		'url' => 'git://github.com/doctrine/doctrine2.git',
-		'branch' => '2.0.4'),
 	'doctrine-mongodb-odm' => array(
-		'url' => 'git@github.com:dtee/mongodb-odm.git',
-		'main_url' => 'git://github.com/doctrine/mongodb-odm.git'),
-	'doctrine-mongodb' => array(
-		'url' => 'git@github.com:dtee/mongodb-odm.git',
-		'main_url' => 'git://github.com/doctrine/mongodb.git'),
+		'url' => 'git://github.com/doctrine/mongodb-odm.git',
+		'submodule' => true),
 	'doctrine-dbal' => array(
 		'url' => 'git://github.com/doctrine/dbal.git',
 		'branch' => '2.0.4'),
@@ -24,8 +16,7 @@ $gitRepositories = array(
 
 	# symfony components
 	'assetic' => array(
-		'url' => 'git://github.com/dtee/assetic.git',
-		'main_url' => 'git://github.com/kriswallsmith/assetic.git'),
+		'url' => 'git://github.com/kriswallsmith/assetic.git'),
 	'monolog' => array(
 		'url' => 'git://github.com/Seldaek/monolog.git'),
 	'swiftmailer' => array(

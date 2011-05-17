@@ -1,53 +1,58 @@
 <?php
+if (!isset($vendorPath)) {
+	$vendorPath = __DIR__ . '/..';
+}
 
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     'Symfony'          => array(
-		__DIR__.'/../vendor/symfony/src',
-		__DIR__.'/../vendor/bundles',),
-    'Sensio'           => __DIR__.'/../vendor/bundles',
-    'JMS'              => __DIR__.'/../vendor/bundles',
-    'Monolog'          => __DIR__.'/../vendor/monolog/src',
-    'Assetic'          => __DIR__.'/../vendor/assetic/src',
+		$vendorPath . '/vendor/symfony/src',
+		$vendorPath . '/vendor/bundles',),
 		
+    'Sensio'           => $vendorPath . '/vendor/bundles',
+    'JMS'              => $vendorPath . '/vendor/bundles',
+    'Monolog'          => $vendorPath . '/vendor/monolog/src',
+    'Assetic'          => $vendorPath . '/vendor/assetic/src',
+
 	# Doctrine
-    'Doctrine\\Common' => __DIR__.'/../vendor/doctrine-common/lib',
-    'Doctrine\\DBAL'   => __DIR__.'/../vendor/doctrine-dbal/lib',
-    'Doctrine'         => __DIR__.'/../vendor/doctrine-orm/lib',
-	'Doctrine\\ODM'	   => __DIR__.'/../vendor/doctrine-mongodb-odm/lib',
-	'Doctrine\\MongoDB'	   => __DIR__.'/../vendor/doctrine-mongodb/lib',
-	'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-fixtures/lib',
-	'Gedmo'			   => __DIR__.'/../vendor/doctrine-extension/lib',
+	'Doctrine\\ODM'	   	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib',
+	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-mongodb/lib',
+    'Doctrine\\Common' 	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-common/lib',
+		
+    'Doctrine\\DBAL'   => $vendorPath . '/vendor/doctrine-dbal/lib',
+    'Doctrine'         => $vendorPath . '/vendor/doctrine-orm/lib',
+	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine-fixtures/lib',
+	'Gedmo'			   => $vendorPath . '/vendor/doctrine-extension/lib',
 
 	// Bundles
-    'Acme'             => __DIR__.'/../src',
+    'Acme'             	=> __DIR__.'/../src',
 	'Odl'				=> __DIR__.'/../src',
-	'Grid'			    => __DIR__.'/../src/Acme',
-	'FOS' 			=> __DIR__.'/../vendor/bundles',
-	'Stof' 			=> __DIR__.'/../vendor/bundles',
+	'Grid'			    => $vendorPath . '/src/Acme',
+	'FOS' 				=> $vendorPath . '/vendor/bundles',
+	'Stof' 				=> $vendorPath . '/vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(
-    'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
-    'Twig_'            => __DIR__.'/../vendor/twig/lib',
-    'Swift_'           => __DIR__.'/../vendor/swiftmailer/lib/classes',
+    'Twig_Extensions_' => $vendorPath . '/vendor/twig-extensions/lib',
+    'Twig_'            => $vendorPath . '/vendor/twig/lib',
+    'Swift_'           => $vendorPath . '/vendor/swiftmailer/lib/classes',
 ));
 
 $loader->register();
 $loader->registerPrefixFallback(array(
-    __DIR__.'/../vendor/symfony/src/Symfony/Component/Locale/Resources/stubs',
+    $vendorPath . '/vendor/symfony/src/Symfony/Component/Locale/Resources/stubs',
 ));
 
 $oneOffs = array(
 	'lessc/lessc.inc.php',
-	'facebook/src/facebook.php',
+	//'facebook/src/facebook.php',
 );
 
 foreach ($oneOffs as $fileName)
 {
-	$fileName = __DIR__ . '/../vendor/' . $fileName;
+	$fileName = $vendorPath . '/vendor/' . $fileName;
 	require_once($fileName);
 }
 

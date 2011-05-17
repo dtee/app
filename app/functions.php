@@ -19,44 +19,47 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
 	ini_set('html_errors', 'Off');
 }
 
-function v($arg, $showTrace = true)
+
+if (!function_exists('v'))
 {
-	if ($showTrace)
+	function v($arg, $showTrace = true)
 	{
-		$traces = debug_backtrace();
-		foreach ($traces as $index => $trace)
+		if ($showTrace)
 		{
-			if ($index <= 0 || !isset($trace['file']))
+			$traces = debug_backtrace();
+			foreach ($traces as $index => $trace)
 			{
-				continue;
-			}
-			else
-			{
-				var_dump("{$trace['file']} (line {$trace['line']})");
-				break;
+				if ($index <= 0 || !isset($trace['file']))
+				{
+					continue;
+				}
+				else
+				{
+					var_dump("{$trace['file']} (line {$trace['line']})");
+					break;
+				}
 			}
 		}
+
+		var_dump($arg);
 	}
 
-	var_dump($arg);
-}
+	function ve($arg)
+	{
+		v($arg);exit();
+	}
 
-function ve($arg)
-{
-	v($arg);exit();
-}
+	function f($message)
+	{
+		xdebug_print_function_stack($message);
+	}
 
-function f($message)
-{
-	xdebug_print_function_stack($message);
+	function fe($message)
+	{
+		xdebug_print_function_stack($message);
+		exit();
+	}
 }
-
-function fe($message)
-{
-	xdebug_print_function_stack($message);
-	exit();
-}
-
 
 if (!function_exists('startswith'))
 {
@@ -66,7 +69,10 @@ if (!function_exists('startswith'))
 	}
 }
 
-function endsWith($haystack,$needle,$case=true) {
-    if($case){return (strcmp(substr($haystack, strlen($haystack) - strlen($needle)),$needle)===0);}
-    return (strcasecmp(substr($haystack, strlen($haystack) - strlen($needle)),$needle)===0);
+if (!function_exists('endsWith'))
+{
+	function endsWith($haystack,$needle,$case=true) {
+	    if($case){return (strcmp(substr($haystack, strlen($haystack) - strlen($needle)),$needle)===0);}
+	    return (strcasecmp(substr($haystack, strlen($haystack) - strlen($needle)),$needle)===0);
+	}
 }

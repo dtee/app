@@ -49,6 +49,10 @@ foreach ($gitRepositories as $key => $info)
 		$git->setType('external');
 	}
 	
+	if (isset($info['submodule'])) {
+		$git->setSubModule($info['submodule']);
+	}
+	
 	$gits[$key] = $git;
 }
 ksort($gits);
