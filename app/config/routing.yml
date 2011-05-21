@@ -6,7 +6,7 @@ _asset:
 _shadow:
     resource: "@ShadowBundle/Controller/MainController.php"
     type:     annotation
-    prefix:  /
+    prefix:  /shadow
  
 _auth: 
     resource: "@OdlAuthBundle/Controller/AuthController.php"
@@ -18,3 +18,7 @@ _user:
     type:     annotation
     prefix:  /user
     
+_places:
+    resource: "@OdlPlacesBundle/Controller/MainController.php"
+    type:     annotation
+    prefix:  /places

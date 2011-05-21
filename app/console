@@ -1,8 +1,5 @@
 #!/usr/bin/env php
 <?php
-$mongo = new \Mongo();
-
-echo 'done';
 require_once __DIR__.'/bootstrap.php.cache';
 require_once __DIR__.'/AppKernel.php';
 

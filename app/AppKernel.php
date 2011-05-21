@@ -37,6 +37,7 @@ class AppKernel extends Kernel
             new Odl\AssetBundle\OdlAssetBundle(),
             new Odl\AuthBundle\OdlAuthBundle(),
             new Odl\ShadowBundle\ShadowBundle(),
+            new Odl\PlacesBundle\OdlPlacesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -53,11 +54,11 @@ class AppKernel extends Kernel
 
     public function getCacheDir()
     {
-        return $this->rootDir.'/cache/'.$this->environment;
+        return '/tmp/symfony-cache/'. $this->environment;
     }
 
     public function getLogDir()
     {
-        return $this->rootDir.'/logs';
+        return '/service/logs';
     }
 }

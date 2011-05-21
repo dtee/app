@@ -9,12 +9,18 @@ css_bundle:
       local: "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.11.custom.css"
     -
       local: "@OdlAssetBundle/Resources/public/css/lib/jquery.jqGrid/ui.jqgrid.css"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/facelist_2-0.css"
     - 
       local: "@OdlAuthBundle/Resources/public/css/form.less"
-    -
-      local: "@ShadowBundle/Resources/public/css/layout.less"
+#    -
+#      local: "@ShadowBundle/Resources/public/css/layout.less"
+#    - 
+#      local: "@ShadowBundle/Resources/public/css/main.less"
     - 
-      local: "@ShadowBundle/Resources/public/css/main.less"
+      local: "@OdlPlacesBundle/Resources/public/css/layout.less"
+    - 
+      local: "@OdlPlacesBundle/Resources/public/css/main.less"
  
 js_bundle:
   root_path: /home/dtee/symfony/src
@@ -31,10 +37,18 @@ js_bundle:
       local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.floatError.js"
     -
       local: "@OdlAssetBundle/Resources/public/js/lib/jquery.jqGrid/jquery.jqGrid.src.js"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.json/jquery.json-2.2.js"
+    -
+      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/jquery.facelist_2-0.js"
     - 
       local: "@OdlAssetBundle/Resources/public/js/lib/highcharts/js/highcharts.src.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/app/fb.js"
+#    -
+#      local: "@OdlAssetBundle/Resources/public/js/app/fb.js"
     -
       local: "@ShadowBundle/Resources/public/js/main.js"
+    -
+      local: "@OdlPlacesBundle/Resources/public/js/map.js"
+    -
+      local: "@OdlPlacesBundle/Resources/public/js/facebook.js"
       

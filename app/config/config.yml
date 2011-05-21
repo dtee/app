@@ -51,6 +51,9 @@ doctrine:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    extensions:
+        - twig.extension.debug
+        - twig.extension.text
 #    form:
 #        resources: ['AcmeDemoBundle:Form:fields.html.twig']
 
@@ -81,6 +84,9 @@ doctrine_mongodb:
                     type: annotation
                     dir: Documents/
                 OdlAuthBundle:
+                    type: annotation
+                    dir: Documents/
+                OdlPlacesBundle:
                     type: annotation
                     dir: Documents/
                 
