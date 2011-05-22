@@ -18,7 +18,6 @@ local.properties
 .cproject
 app/logs/
 app/cache/
-src/
 vendor/
 vendor
 web/bundles/

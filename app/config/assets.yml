@@ -47,8 +47,8 @@ js_bundle:
 #      local: "@OdlAssetBundle/Resources/public/js/app/fb.js"
     -
       local: "@ShadowBundle/Resources/public/js/main.js"
-    -
-      local: "@OdlPlacesBundle/Resources/public/js/map.js"
-    -
-      local: "@OdlPlacesBundle/Resources/public/js/facebook.js"
+#    -
+#      local: "@OdlPlacesBundle/Resources/public/js/map.js"
+#    -
+#      local: "@OdlPlacesBundle/Resources/public/js/facebook.js"
       

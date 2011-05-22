@@ -41,18 +41,18 @@ security:
                 key: dtee-wooshed
                 name: auth
                 lifetime: 3600 # in seconds
-                path: /auth
-                domain: wooshed.com
+                path: /
+                domain: ~
                 secure: true
                 httponly: true
                 always_remember_me: true
-                remember_me_parameter: _remember_me
+                remember_me_parameter: a
             logout:
                 path:   /auth/logout
                 target: /
                 invalidate_session: true
                 delete_cookies:
-                    a: { path: /auth, domain: wooshed.com }
+                    a: { path: /, domain: null }
             anonymous: ~
             
     acl:
