@@ -10,6 +10,6 @@
 [submodule "src/Odl/PlacesBundle"]
 	path = src/Odl/PlacesBundle
 	url = ssh://git@wooshed.com/~/places.git
-[submodule "grid"]
-	path = src/Odl/GridBundle
-	url = ssh://git@wooshed.com/~/grid.git
+[submodule "src/Dtc/GridBundle"]
+	path = src/Dtc/GridBundle
+	url = ssh://dtee@wooshed.com/~/grid.git
