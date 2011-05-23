@@ -27,7 +27,7 @@ $loader->registerNamespaces(array(
 	'Gedmo'			   => $vendorPath . '/vendor/doctrine-extension/lib',
 
 	// Bundles
-    'Acme'             	=> __DIR__.'/../src',
+	'Dtc'				=> __DIR__.'/../src',
 	'Odl'				=> __DIR__.'/../src',
 	'Grid'			    => $vendorPath . '/src/Acme',
 	'FOS' 				=> $vendorPath . '/vendor/bundles',

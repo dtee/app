@@ -34,6 +34,7 @@ class AppKernel extends Kernel
             // new FOS\TwitterBundle\FOSTwitterBundle(),
 
             # Odl bundles
+            new Dtc\GridBundle\DtcGridBundle(),
             new Odl\AssetBundle\OdlAssetBundle(),
             new Odl\AuthBundle\OdlAuthBundle(),
             new Odl\ShadowBundle\ShadowBundle(),

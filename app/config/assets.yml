@@ -1,54 +1,53 @@
-css_bundle:
+css_lib:
   root_path: /home/dtee/symfony/src
   less_import_paths: 
     - "@OdlAssetBundle/Resources/public/css/lib/less"
   resources:
-    -
-      local: "@OdlAssetBundle/Resources/public/css/lib/blue_print/screen.css"
-    -
-      local: "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.11.custom.css"
-    -
-      local: "@OdlAssetBundle/Resources/public/css/lib/jquery.jqGrid/ui.jqgrid.css"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/facelist_2-0.css"
-    - 
-      local: "@OdlAuthBundle/Resources/public/css/form.less"
-#    -
-#      local: "@ShadowBundle/Resources/public/css/layout.less"
-#    - 
-#      local: "@ShadowBundle/Resources/public/css/main.less"
-    - 
-      local: "@OdlPlacesBundle/Resources/public/css/layout.less"
-    - 
-      local: "@OdlPlacesBundle/Resources/public/css/main.less"
+    - "@OdlAssetBundle/Resources/public/css/lib/blue_print/screen.css"
+    - "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.11.custom.css"
+    - "@OdlAssetBundle/Resources/public/css/lib/jquery.jqGrid/ui.jqgrid.css"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/facelist_2-0.css"
+    - "@OdlAuthBundle/Resources/public/css/form.less"
  
-js_bundle:
+js_lib:
   root_path: /home/dtee/symfony/src
   resources:
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery/jquery-1.5.2.js"
-#    -
-#      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-1.4.4.min.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-ui-1.8.11.custom.min.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.floatError.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.jqGrid/jquery.jqGrid.src.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.json/jquery.json-2.2.js"
-    -
-      local: "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/jquery.facelist_2-0.js"
-    - 
-      local: "@OdlAssetBundle/Resources/public/js/lib/highcharts/js/highcharts.src.js"
-#    -
-#      local: "@OdlAssetBundle/Resources/public/js/app/fb.js"
-#    -
-#      local: "@ShadowBundle/Resources/public/js/main.js"
-    -
-      local: "@OdlPlacesBundle/Resources/public/js/map.js"
-    -
-      local: "@OdlPlacesBundle/Resources/public/js/facebook.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery/jquery-1.5.2.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-1.4.4.min.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-ui-1.8.11.custom.min.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.floatError.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.jqGrid/jquery.jqGrid.src.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.json/jquery.json-2.2.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/jquery.facelist_2-0.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/highcharts/js/highcharts.src.js"
       
+shadow_css:
+  root_path: /home/dtee/symfony/src
+  less_import_paths: 
+    - "@OdlAssetBundle/Resources/public/css/lib/less"
+  resources:
+    - "@ShadowBundle/Resources/public/css/layout.less"
+    - "@ShadowBundle/Resources/public/css/main.less"
+
+places_css:
+  root_path: /home/dtee/symfony/src
+  less_import_paths: 
+    - "@OdlAssetBundle/Resources/public/css/lib/less"
+  resources:
+    - "@OdlPlacesBundle/Resources/public/css/layout.less"
+    - "@OdlPlacesBundle/Resources/public/css/main.less"
+  
+shadow_js:
+  root_path: /home/dtee/symfony/src
+  resources:
+    - "@ShadowBundle/Resources/public/js/main.js"
+  
+places_js:
+  root_path: /home/dtee/symfony/src
+  resources:
+    - "@OdlPlacesBundle/Resources/public/js/map.js"
+    - "@OdlPlacesBundle/Resources/public/js/facebook.js"
+
+    
+    

@@ -7,6 +7,11 @@ _shadow:
     resource: "@ShadowBundle/Controller/MainController.php"
     type:     annotation
     prefix:  /shadow
+    
+shadow_char:
+    resource: "@ShadowBundle/Controller/CharacterController.php"
+    type:     annotation
+    prefix:  /shadow/char
  
 _auth: 
     resource: "@OdlAuthBundle/Controller/AuthController.php"
@@ -22,3 +27,10 @@ _places:
     resource: "@OdlPlacesBundle/Controller/MainController.php"
     type:     annotation
     prefix:  /places
+
+grid:
+    resource: "@DtcGridBundle/Controller/GridController.php"
+    type:     annotation
+    prefix:  /grid
+
+

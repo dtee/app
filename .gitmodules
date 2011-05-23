@@ -11,5 +11,5 @@
 	path = src/Odl/PlacesBundle
 	url = ssh://git@wooshed.com/~/places.git
 [submodule "grid"]
-	path = grid
+	path = src/Odl/GridBundle
 	url = ssh://git@wooshed.com/~/grid.git
