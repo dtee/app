@@ -2,6 +2,6 @@ places:
   prefix: ~
   gutter: 5
   resources: 
-    - "@OdlPlacesBundle/Resources/public/img/background/"
-    - "@OdlPlacesBundle/Resources/public/img/icons/"
+    - "@OdlPlacesBundle/Resources/public/img/fb/"
+    - "@OdlPlacesBundle/Resources/public/img/find/"
       
