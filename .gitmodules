@@ -12,4 +12,4 @@
 	url = ssh://git@wooshed.com/~/places.git
 [submodule "src/Dtc/GridBundle"]
 	path = src/Dtc/GridBundle
-	url = ssh://dtee@wooshed.com/~/grid.git
+	url = ssh://git@wooshed.com/~/grid.git

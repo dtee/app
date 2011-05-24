@@ -48,6 +48,3 @@ places_js:
   resources:
     - "@OdlPlacesBundle/Resources/public/js/map.js"
     - "@OdlPlacesBundle/Resources/public/js/facebook.js"
-
-    
-    

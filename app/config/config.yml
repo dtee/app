@@ -67,7 +67,11 @@ assetic:
         #     jar: %kernel.root_dir%/java/compiler.jar
         # yui_css:
         #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
-                    
+
+odl_asset:
+  asset_resource: "%kernel.root_dir%/config/assets.yml" 
+  sprite_resource: "%kernel.root_dir%/config/asset_sprites.yml"
+
 doctrine_mongodb:
     default_database: hello_%kernel.environment%
     auto_generate_hydrator_classes: true
