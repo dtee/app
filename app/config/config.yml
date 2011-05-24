@@ -70,7 +70,7 @@ assetic:
 
 odl_asset:
   asset_resource: "%kernel.root_dir%/config/assets.yml" 
-  sprite_resource: "%kernel.root_dir%/config/asset_sprites.yml"
+  sprite_resource: "%kernel.root_dir%/config/assets_sprites.yml"
 
 doctrine_mongodb:
     default_database: hello_%kernel.environment%
