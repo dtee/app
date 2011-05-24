@@ -13,3 +13,6 @@
 [submodule "src/Dtc/GridBundle"]
 	path = src/Dtc/GridBundle
 	url = ssh://git@wooshed.com/~/grid.git
+[submodule "src/Dtc/MarketBundle"]
+	path = src/Dtc/MarketBundle
+	url = ssh://git@wooshed.com/~/market.git
