@@ -17,15 +17,16 @@ $loader->registerNamespaces(array(
     'Assetic'          => $vendorPath . '/vendor/assetic/src',
 
 	# Doctrine
-	'Doctrine\\ODM'	   	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib',
-	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-mongodb/lib',
-    'Doctrine\\Common' 	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-common/lib',
+	'Gedmo'				=> $vendorPath . '/vendor/doctrine-extension/lib',
+    'Doctrine'			=> $vendorPath . '/vendor/doctrine-extension/vendor/doctrine-orm/lib',
+    'Doctrine\\DBAL'	=> $vendorPath . '/vendor/doctrine-extension/vendor/doctrine-dbal/lib',
 
-    'Doctrine'         => $vendorPath . '/vendor/doctrine-orm/lib',
-    'Doctrine\\DBAL'   => $vendorPath . '/vendor/doctrine-orm/lib/vendor/doctrine-dbal/lib',
+	'Doctrine\\ODM'		=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib',
+	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/vendor/doctrine-mongodb/lib',
+    'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/vendor/doctrine-common/lib',
 
+	# DataFixtures ...
 	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine-fixtures/lib',
-	'Gedmo'			   => $vendorPath . '/vendor/doctrine-extension/lib',
 
 	// Bundles
 	'Dtc'				=> __DIR__.'/../src',
