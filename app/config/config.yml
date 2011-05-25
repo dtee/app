@@ -23,7 +23,13 @@ framework:
         enabled: true
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
     validation:    { enabled: true, annotations: true }
-    templating:    { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:    
+        engines: ['twig'] 
+        assets_version: ~
+        assets_base_urls: 
+            - ~
+#          - http://img.despair.oodle.info/a/symfony
+
     session:
         default_locale: "%locale%"
         lifetime:       3600
@@ -70,7 +76,6 @@ assetic:
 
 odl_asset:
   asset_resource: "%kernel.root_dir%/config/assets.yml" 
-  sprite_resource: "%kernel.root_dir%/config/assets_sprites.yml"
 
 doctrine_mongodb:
     default_database: hello_%kernel.environment%

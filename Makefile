@@ -2,7 +2,10 @@ include ../Makefile.common
 
 all: install
 
-install: path-install cache-install
+install: path-install cache-install asset-install
+
+asset-install:
+	app/console assets:install --symlink web
 	
 path-install: 
 	test -d vendor || ln -s $(SERVICE_DEST)/local/apache/lib/php/vendor vendor
