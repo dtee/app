@@ -21,7 +21,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
             // Handle assets
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            // new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
