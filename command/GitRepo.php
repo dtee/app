@@ -14,14 +14,14 @@ class GitRepo {
 		$this->parentGitPath = $parentGitPath;
 		$this->absolutePath = $absolutePath;
 	}
-	
+
 	/**
 	 * @return the $type
 	 */
 	public function getType() {
 		return $this->type;
 	}
-	
+
 	public function setSubModule($exists) {
 		$this->subModule = $exists;
 	}
@@ -32,7 +32,7 @@ class GitRepo {
 	public function setType($type) {
 		$this->type = $type;
 	}
-	
+
 	/**
 	 * @return the $key
 	 */
@@ -73,11 +73,11 @@ class GitRepo {
 	public function getRemotes() {
 		return $this->remotes;
 	}
-	
+
 	public function getRemote($key) {
 		return $this->remotes[$key];
 	}
-	
+
 	public function addRemote($key, $url) {
 		$this->remotes[$key] = $url;
 	}
@@ -105,7 +105,7 @@ class GitRepo {
 
 	public function update()
 	{
-		chdir($this->absolutePath);
+/*		chdir($this->absolutePath);
 
 		// Make sure the target url is still the same.
 		echo "path: " . getcwd() . "\n";
@@ -124,10 +124,12 @@ class GitRepo {
 			echo print_shell_exec("git fetch origin");
 			echo print_shell_exec("git pull --rebase origin master");
 		}
-		
-		echo "---------- End Upgrade: {$this->key} ----------\n\n";
+
+		echo "---------- End Upgrade: {$this->key} ----------\n\n";*/
+		$path = str_replace('/home/dtee/service/web/', '', $this->absolutePath);
+		echo print_shell_exec("git submodule add {$this->remotes['origin']} {$path}");
 	}
-	
+
 	public function install()
 	{
 		if ($this->isInstalled())
@@ -136,14 +138,14 @@ class GitRepo {
 			echo "---------- End Upgrade: {$this->key} ----------\n\n";
 			return;
 		}
-		
+
 		echo print_shell_exec("git clone {$this->remotes['origin']} {$this->absolutePath}");
 
 		if ($this->subModule) {
 			echo print_shell_exec("git submodule update");
 		}
 	}
-	
+
 	public function isInstalled()
 	{
 		return is_dir($this->absolutePath . '/.git');

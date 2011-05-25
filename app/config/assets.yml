@@ -11,7 +11,9 @@ css_lib:
     - "@OdlAssetBundle/Resources/public/css/lib/less"
   resources:
     - "@OdlAssetBundle/Resources/public/css/lib/blue_print/screen.css"
-    - "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.11.custom.css"
+    - 
+      source_path: /bundles/odlasset/css/lib/jquery.ui/smoothness/
+      local: "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.13.custom.css"
     - "@OdlAssetBundle/Resources/public/css/lib/jquery.jqGrid/ui.jqgrid.css"
     - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/facelist_2-0.css"
     - "@OdlAuthBundle/Resources/public/css/form.less"

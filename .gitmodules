@@ -16,3 +16,66 @@
 [submodule "src/Dtc/MarketBundle"]
 	path = src/Dtc/MarketBundle
 	url = ssh://git@wooshed.com/~/market.git
+[submodule "vendor/bundles/Stof/DoctrineExtensionsBundle"]
+	path = vendor/bundles/Stof/DoctrineExtensionsBundle
+	url = git://github.com/stof/DoctrineExtensionsBundle.git
+[submodule "vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle"]
+	path = vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle
+	url = https://github.com/symfony/DoctrineFixturesBundle.git
+[submodule "vendor/bundles/Symfony/Bundle/DoctrineMongoDBBundle"]
+	path = vendor/bundles/Symfony/Bundle/DoctrineMongoDBBundle
+	url = git://github.com/symfony/DoctrineMongoDBBundle.git
+[submodule "vendor/bundles/FOS/FacebookBundle"]
+	path = vendor/bundles/FOS/FacebookBundle
+	url = git://github.com/FriendsOfSymfony/FacebookBundle.git
+[submodule "vendor/bundles/Sensio/Bundle/FrameworkExtraBundle"]
+	path = vendor/bundles/Sensio/Bundle/FrameworkExtraBundle
+	url = git://github.com/sensio/SensioFrameworkExtraBundle.git
+[submodule "vendor/bundles/JMS/SecurityExtraBundle"]
+	path = vendor/bundles/JMS/SecurityExtraBundle
+	url = git://github.com/schmittjoh/SecurityExtraBundle.git
+[submodule "vendor/bundles/FOS/TwitterBundle"]
+	path = vendor/bundles/FOS/TwitterBundle
+	url = git://github.com/FriendsOfSymfony/TwitterBundle.git
+[submodule "vendor/bundles/FOS/UserBundle"]
+	path = vendor/bundles/FOS/UserBundle
+	url = git://github.com/FriendsOfSymfony/UserBundle.git
+[submodule "vendor/assetic"]
+	path = vendor/assetic
+	url = git@github.com:dtee/assetic.git
+[submodule "vendor/doctrine-extension"]
+	path = vendor/doctrine-extension
+	url = git://github.com/l3pp4rd/DoctrineExtensions.git
+[submodule "vendor/doctrine-fixtures"]
+	path = vendor/doctrine-fixtures
+	url = https://github.com/doctrine/data-fixtures.git
+[submodule "vendor/doctrine-migrations"]
+	path = vendor/doctrine-migrations
+	url = git://github.com/doctrine/migrations.git
+[submodule "vendor/doctrine-mongodb-odm"]
+	path = vendor/doctrine-mongodb-odm
+	url = git://github.com/doctrine/mongodb-odm.git
+[submodule "vendor/facebook"]
+	path = vendor/facebook
+	url = git://github.com/facebook/php-sdk.git
+[submodule "vendor/lessc"]
+	path = vendor/lessc
+	url = git://github.com/leafo/lessphp.git
+[submodule "vendor/monolog"]
+	path = vendor/monolog
+	url = git://github.com/Seldaek/monolog.git
+[submodule "vendor/swiftmailer"]
+	path = vendor/swiftmailer
+	url = git://github.com/swiftmailer/swiftmailer.git
+[submodule "vendor/symfony"]
+	path = vendor/symfony
+	url = git@github.com:dtee/symfony.git
+[submodule "vendor/twig_extension"]
+	path = vendor/twig_extension
+	url = https://github.com/fabpot/Twig-extensions.git
+[submodule "vendor/twig"]
+	path = vendor/twig
+	url = git://github.com/fabpot/Twig.git
+[submodule "vendor/doctrine-orm"]
+	path = vendor/doctrine-orm
+	url = https://github.com/doctrine/doctrine2.git

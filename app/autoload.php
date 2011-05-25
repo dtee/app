@@ -21,8 +21,9 @@ $loader->registerNamespaces(array(
 	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-mongodb/lib',
     'Doctrine\\Common' 	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-common/lib',
 
-    'Doctrine\\DBAL'   => $vendorPath . '/vendor/doctrine-dbal/lib',
     'Doctrine'         => $vendorPath . '/vendor/doctrine-orm/lib',
+    'Doctrine\\DBAL'   => $vendorPath . '/vendor/doctrine-orm/lib/vendor/doctrine-dbal/lib',
+
 	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine-fixtures/lib',
 	'Gedmo'			   => $vendorPath . '/vendor/doctrine-extension/lib',
 

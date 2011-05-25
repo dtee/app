@@ -4,8 +4,8 @@ $gitRepositories = array(
 	'doctrine-mongodb-odm' => array(
 		'url' => 'git://github.com/doctrine/mongodb-odm.git',
 		'submodule' => true),
-	'doctrine-dbal' => array(
-		'url' => 'git://github.com/doctrine/dbal.git',
+	'doctrine-orm' => array(
+		'url' => 'https://github.com/doctrine/doctrine2.git',
 		'branch' => '2.0.4'),
 	'doctrine-migrations' => array(
 		'url' => 'git://github.com/doctrine/migrations.git'),
@@ -70,25 +70,4 @@ $gitRepositories = array(
 	'FacebookBundle' => array(
 		'url' => 'git://github.com/FriendsOfSymfony/FacebookBundle.git',
 		'path' => 'vendor/bundles/FOS/FacebookBundle'),
-
-	// My bundles
-	'asset' => array(
-		'url' => 'git@github.com:dtee/asset.git',
-		'path' => 'src/Odl/AssetBundle',
-		'type' => 'src'),
-
-	'auth' => array(
-		'url' => 'git@github.com:dtee/auth.git',
-		'path' => 'src/Odl/AuthBundle',
-		'type' => 'src'),
-
-	'shadow' => array(
-		'url' => 'git@github.com:dtee/ShadowBundle.git',
-		'path' => 'src/Odl/ShadowBundle',
-		'type' => 'src'),
-
-	// css and javascript
-/*	'blueprint-less' => array(
-		'url' => 'git://github.com/sensio/SensioFrameworkExtraBundle.git',
-		'path' => '_css/blueprint-less'), */
 );
