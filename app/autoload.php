@@ -1,8 +1,5 @@
 <?php
-if (!isset($vendorPath)) {
-	$vendorPath = __DIR__ . '/..';
-}
-
+$vendorPath = __DIR__ . '/..';
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 
 $loader = new UniversalClassLoader();
@@ -22,8 +19,8 @@ $loader->registerNamespaces(array(
     'Doctrine\\DBAL'	=> $vendorPath . '/vendor/doctrine-extension/vendor/doctrine-dbal/lib',
 
 	'Doctrine\\ODM'		=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib',
-	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/vendor/doctrine-mongodb/lib',
-    'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/vendor/doctrine-common/lib',
+	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-mongodb/lib',
+    'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-common/lib',
 
 	# DataFixtures ...
 	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine-fixtures/lib',
