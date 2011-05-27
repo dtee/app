@@ -17,10 +17,12 @@ $loader->registerNamespaces(array(
 
 	# Doctrine
 	'Gedmo'				=> $vendorPath . '/vendor/doctrine-extension/lib',
+
     'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine/common/lib',
-	'Doctrine\\ODM'		=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib',
-	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-mongodb/lib',
-    //'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-common/lib',
+    'Doctrine\\ORM'		=> $vendorPath . '/vendor/doctrine/orm/lib',
+    'Doctrine\\DBAL'	=> $vendorPath . '/vendor/doctrine/dbal/lib',
+	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine/mongodb/lib',
+	'Doctrine\\ODM'		=> $vendorPath . '/vendor/doctrine/odm/lib',
 
 	# DataFixtures ...
 	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine-fixtures/lib',

@@ -11,7 +11,6 @@ parameters:
     mailer_password: ~
     locale: en
     doctrine.odm.mongodb.default_document_manager: default
-    assetic.yaml_asset_manager.packages: "%kernel.root_dir%/config/assets.yml"
     
 imports:
     - { resource: security.yml }
@@ -21,13 +20,16 @@ framework:
     secret: "%csrf_secret%"
     csrf_protection:
         enabled: true
-    router:        { resource: "%kernel.root_dir%/config/routing.yml" }
+    router:        
+        resource: "%kernel.root_dir%/config/routing.yml"
+        cache_warmer:   false
     validation:    true
+    form:
+        enabled: true
     templating:    
         engines: ['twig'] 
         assets_version: ~
         assets_base_urls: 
-            - ~
             - http://img.despair.oodle.info/a/symfony
 
     session:
@@ -37,7 +39,10 @@ framework:
         
     annotations:
         cache:          file
-            
+        
+sensio_framework_extra: 
+    router:  { annotations: true }
+
 fos_user:
     db_driver: mongodb
     firewall_name: all
