@@ -1,11 +1,14 @@
 include ../Makefile.common
 
+IMG_PATH = /service/img/a/symfony
+
 all: install
 
 install: path-install cache-install asset-install
 
 asset-install:
 	app/console assets:install --symlink web
+	if  test -d $(IMG_PATH); then app/console assets:install --symlink $(IMG_PATH); fi
 	
 path-install: 
 	test -d vendor || ln -s $(SERVICE_DEST)/local/apache/lib/php/vendor vendor

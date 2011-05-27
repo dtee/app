@@ -28,7 +28,7 @@ framework:
         assets_version: ~
         assets_base_urls: 
             - ~
-#          - http://img.despair.oodle.info/a/symfony
+            - http://img.despair.oodle.info/a/symfony
 
     session:
         default_locale: "%locale%"
@@ -46,10 +46,10 @@ doctrine:
         default_connection:       default
         connections:
             default:
-                dbname:           user
-                user:             root
+                dbname:           test
+                user:             oodle
                 password:         null
-                host:             localhost
+                host:             wii
     orm:
         auto_mapping: true
                  
