@@ -30,7 +30,7 @@ class AppKernel extends Kernel
 
             # FOS Bundles
             new FOS\UserBundle\FOSUserBundle(),
-            new FOS\FacebookBundle\FOSFacebookBundle(),
+            // new FOS\FacebookBundle\FOSFacebookBundle(),
             // new FOS\TwitterBundle\FOSTwitterBundle(),
 
             # Odl bundles

@@ -8,19 +8,19 @@ $loader->registerNamespaces(array(
 		$vendorPath . '/vendor/symfony/src',
 		$vendorPath . '/vendor/bundles',),
 
-    'Sensio'           => $vendorPath . '/vendor/bundles',
-    'JMS'              => $vendorPath . '/vendor/bundles',
-    'Monolog'          => $vendorPath . '/vendor/monolog/src',
-    'Assetic'          => $vendorPath . '/vendor/assetic/src',
+    'Sensio'          	=> $vendorPath . '/vendor/bundles',
+    'JMS'            	=> $vendorPath . '/vendor/bundles',
+	'FOS' 				=> $vendorPath . '/vendor/bundles',
+	'Stof' 				=> $vendorPath . '/vendor/bundles',
+    'Monolog'         	=> $vendorPath . '/vendor/monolog/src',
+    'Assetic'         	=> $vendorPath . '/vendor/assetic/src',
 
 	# Doctrine
 	'Gedmo'				=> $vendorPath . '/vendor/doctrine-extension/lib',
-    'Doctrine'			=> $vendorPath . '/vendor/doctrine-extension/vendor/doctrine-orm/lib',
-    'Doctrine\\DBAL'	=> $vendorPath . '/vendor/doctrine-extension/vendor/doctrine-dbal/lib',
-
+    'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine/common/lib',
 	'Doctrine\\ODM'		=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib',
 	'Doctrine\\MongoDB'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-mongodb/lib',
-    'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-common/lib',
+    //'Doctrine\\Common'	=> $vendorPath . '/vendor/doctrine-mongodb-odm/lib/vendor/doctrine-common/lib',
 
 	# DataFixtures ...
 	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine-fixtures/lib',
@@ -30,8 +30,6 @@ $loader->registerNamespaces(array(
 	'Dtc'				=> __DIR__.'/../src',
 	'Odl'				=> __DIR__.'/../src',
 	'Grid'			    => $vendorPath . '/src/Acme',
-	'FOS' 				=> $vendorPath . '/vendor/bundles',
-	'Stof' 				=> $vendorPath . '/vendor/bundles',
 ));
 
 $loader->registerPrefixes(array(
