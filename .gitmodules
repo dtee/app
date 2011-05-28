@@ -82,3 +82,6 @@
 [submodule "vendor/symfony"]
 	path = vendor/symfony
 	url = https://github.com/symfony/symfony.git
+[submodule "vendor/doctrine/fixtures"]
+	path = vendor/doctrine/fixtures
+	url = https://github.com/doctrine/data-fixtures.git

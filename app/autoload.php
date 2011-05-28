@@ -25,7 +25,7 @@ $loader->registerNamespaces(array(
 	'Doctrine\\ODM'		=> $vendorPath . '/vendor/doctrine/odm/lib',
 
 	# DataFixtures ...
-	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine-fixtures/lib',
+	'Doctrine\\Common\\DataFixtures' => $vendorPath . '/vendor/doctrine/fixtures/lib',
 
 	// Bundles
 	'Acme'				=> __DIR__.'/../src',
