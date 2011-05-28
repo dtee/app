@@ -32,14 +32,3 @@ grid:
     resource: "@DtcGridBundle/Controller/GridController.php"
     type:     annotation
     prefix:  /grid
-
-acme-pizza_pizza:
-    resource: "@AcmePizzaBundle/Controller/PizzaController.php"
-    type:     annotation
-    prefix:  /
-
-acme-pizza_order:
-    resource: "@AcmePizzaBundle/Controller/OrderController.php"
-    type:     annotation
-    prefix:  /
-    
