@@ -20,6 +20,6 @@ cache-install:
 	./bin/build_bootstrap.php
 	
 clean: 
-	rm -rf vendor
-	rm -rf install
-	rm -rf /tmp/symfony-cache 
+	sudo rm -rf /tmp/symfony-cache 
+
+reset: clean cache-install
