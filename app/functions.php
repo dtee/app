@@ -31,6 +31,7 @@ if (!function_exists('v'))
 			{
 				if ($index <= 0 || !isset($trace['file']))
 				{
+					var_dump("{$trace['file']} (line {$trace['line']})");
 					continue;
 				}
 				else

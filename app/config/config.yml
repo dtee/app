@@ -11,7 +11,13 @@ parameters:
     mailer_password: ~
     locale: en
     doctrine.odm.mongodb.default_document_manager: default
-    
+
+services:
+    annotations.reader: 
+        class: %annotations.reader.class%
+        calls:
+            - [ setAutoloadAnnotations, [ true ] ]
+            
 imports:
     - { resource: security.yml }
     
@@ -23,14 +29,14 @@ framework:
     router:        
         resource: "%kernel.root_dir%/config/routing.yml"
         cache_warmer:   false
-    validation:    true
+    validation:    { enabled: true, enable_annotations: true }
     form:
         enabled: true
     templating:    
         engines: ['twig'] 
         assets_version: ~
         assets_base_urls: 
-            - http://img.despair.oodle.info/a/symfony
+            - ~
 
     session:
         default_locale: "%locale%"

@@ -50,7 +50,7 @@ $loader->register();
 
 $oneOffs = array(
 	'lessc/lessc.inc.php',
-	//'facebook/src/facebook.php',
+	'facebook/src/facebook.php',
 );
 
 foreach ($oneOffs as $fileName)
