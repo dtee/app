@@ -1,3 +1,7 @@
+home: 
+    pattern:   /
+    defaults:  { _controller: ShadowBundle:Main:index }
+    
 _asset:
     resource: "@OdlAssetBundle/Controller/AssetController.php"
     type:     annotation

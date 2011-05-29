@@ -17,6 +17,7 @@ cache-install:
 	test -d /tmp/symfony-cache || mkdir /tmp/symfony-cache
 	sudo chmod 777 /tmp/symfony-cache -R
 	sudo chmod 777 /service/logs -R
+	./bin/build_bootstrap.php
 	
 clean: 
 	rm -rf vendor
