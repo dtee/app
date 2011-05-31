@@ -21,7 +21,7 @@
 	url = git://github.com/stof/DoctrineExtensionsBundle.git
 [submodule "vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle"]
 	path = vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle
-	url = https://github.com/symfony/DoctrineFixturesBundle.git
+	url = git://github.com/symfony/DoctrineFixturesBundle.git
 [submodule "vendor/bundles/Symfony/Bundle/DoctrineMongoDBBundle"]
 	path = vendor/bundles/Symfony/Bundle/DoctrineMongoDBBundle
 	url = git://github.com/symfony/DoctrineMongoDBBundle.git
@@ -60,31 +60,31 @@
 	url = git://github.com/swiftmailer/swiftmailer.git
 [submodule "vendor/twig_extension"]
 	path = vendor/twig_extension
-	url = https://github.com/fabpot/Twig-extensions.git
+	url = git://github.com/fabpot/Twig-extensions.git
 [submodule "vendor/twig"]
 	path = vendor/twig
 	url = git://github.com/fabpot/Twig.git
 [submodule "vendor/doctrine/common"]
 	path = vendor/doctrine/common
-	url = https://github.com/doctrine/common.git
+	url = git://github.com/doctrine/common.git
 [submodule "vendor/doctrine/dbal"]
 	path = vendor/doctrine/dbal
-	url = https://github.com/doctrine/dbal.git
+	url = git://github.com/doctrine/dbal.git
 [submodule "vendor/doctrine/orm"]
 	path = vendor/doctrine/orm
-	url = https://github.com/doctrine/doctrine2.git
+	url = git://github.com/doctrine/doctrine2.git
 [submodule "vendor/doctrine/mongodb"]
 	path = vendor/doctrine/mongodb
-	url = https://github.com/doctrine/mongodb.git
+	url = git://github.com/doctrine/mongodb.git
 [submodule "vendor/doctrine/odm"]
 	path = vendor/doctrine/odm
-	url = https://github.com/doctrine/mongodb-odm.git
+	url = git://github.com/doctrine/mongodb-odm.git
 [submodule "vendor/symfony"]
 	path = vendor/symfony
-	url = https://github.com/dtee/symfony.git
+	url = git://github.com/dtee/symfony.git
 [submodule "vendor/doctrine/fixtures"]
 	path = vendor/doctrine/fixtures
-	url = https://github.com/doctrine/data-fixtures.git
+	url = git://github.com/doctrine/data-fixtures.git
 [submodule "vendor/metadata"]
 	path = vendor/metadata
 	url = http://github.com/schmittjoh/metadata.git
