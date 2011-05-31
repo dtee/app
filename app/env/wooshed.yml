@@ -1,5 +1,5 @@
 parameters:
-  root_domain: www.wooshed.com
+  root_domain: wooshed.com
   assets_base_urls:
     - http://img.wooshed.com
     
