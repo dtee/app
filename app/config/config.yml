@@ -1,3 +1,6 @@
+imports:
+    - { resource: security.yml }
+    
 parameters:
     csrf_secret: test-market
     database_driver: pdo_mysql
@@ -17,9 +20,6 @@ services:
         class: %annotations.reader.class%
         calls:
             - [ setAutoloadAnnotations, [ true ] ]
-            
-imports:
-    - { resource: security.yml }
     
 framework:
     charset:       UTF-8
@@ -35,8 +35,7 @@ framework:
     templating:    
         engines: ['twig'] 
         assets_version: ~
-        assets_base_urls: 
-            - ~
+        assets_base_urls: %assets_base_urls%
 
     session:
         default_locale: "%locale%"
@@ -49,20 +48,26 @@ framework:
 sensio_framework_extra: 
     router:  { annotations: true }
 
+jms_security_extra:
+    # If you set-up your controllers as services, you must set this to false;
+    # otherwise your security checks will be performed twice.
+    secure_controllers: true
+
+    # Whether you want to secure all services (true), or only secure specific
+    # services (false); see also below
+    secure_all_services: false
+
+    # Enabling this setting will add an additional special attribute "IS_IDDQD".
+    # Anybody with this attribute will effectively bypass all security checks.
+    enable_iddqd_attribute: false
+
 fos_user:
     db_driver: mongodb
     firewall_name: all
     class:
         model:
             user: Odl\AuthBundle\Documents\UserAuth
-                
-#fos_facebook:
-#      file:   %kernel.root_dir%/../vendor/facebook/src/facebook.php
-#      alias:  facebook
-#      app_id: 170752334654
-#      secret: 4261ef8a2167c3ce7bbe8ad03d6b5361
-#      cookie: true
-      
+
 doctrine:
     dbal:
         default_connection:       default
@@ -82,22 +87,12 @@ twig:
     extensions:
         - twig.extension.debug
         - twig.extension.text
-#    form:
-#        resources: ['AcmeDemoBundle:Form:fields.html.twig']
-
-# Assetic Configuration
-#assetic:
-#    debug:          %kernel.debug%
-#    use_controller: true
-#    filters:
-#        cssrewrite: ~
-#        # closure:
-#        #     jar: %kernel.root_dir%/java/compiler.jar
-#        # yui_css:
-#        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
+    globals: 
+        g_facebook: @facebook
+        g_layout: ShadowBundle::layout.html.twig
 
 odl_asset:
-  asset_resource: "%kernel.root_dir%/config/assets.yml" 
+    asset_resource: "%kernel.root_dir%/config/assets.yml" 
 
 doctrine_mongodb:
     default_database: hello_%kernel.environment%
@@ -110,6 +105,7 @@ doctrine_mongodb:
                 connect: true
     document_managers:  
         default:
+#            auto_mapping: true
             mappings:
                 ShadowBundle:
                     type: annotation

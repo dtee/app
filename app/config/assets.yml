@@ -30,6 +30,7 @@ js_lib:
     - "@OdlAssetBundle/Resources/public/js/lib/jquery.json/jquery.json-2.2.js"
     - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/jquery.facelist_2-0.js"
     - "@OdlAssetBundle/Resources/public/js/lib/highcharts/js/highcharts.src.js"
+    - "@OdlAuthBundle/Resources/public/js/auth.js"
       
 shadow_css:
   type: css
@@ -56,4 +57,3 @@ places_js:
   type: javascript
   resources:
     - "@OdlPlacesBundle/Resources/public/js/map.js"
-    - "@OdlPlacesBundle/Resources/public/js/facebook.js"

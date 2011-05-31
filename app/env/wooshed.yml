@@ -1,0 +1,12 @@
+parameters:
+  root_domain: www.wooshed.com
+  assets_base_urls:
+    - http://img.wooshed.com
+    
+fos_facebook: 
+  file:   %kernel.root_dir%/../vendor/facebook/src/facebook.php
+  alias:  facebook
+  app_id: 170752334654
+  secret: 4261ef8a2167c3ce7bbe8ad03d6b5361
+  cookie: true
+    

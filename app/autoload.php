@@ -14,6 +14,7 @@ $loader->registerNamespaces(array(
 	'Stof' 				=> $vendorPath . '/vendor/bundles',
     'Monolog'         	=> $vendorPath . '/vendor/monolog/src',
     'Assetic'         	=> $vendorPath . '/vendor/assetic/src',
+	'Metadata'         => __DIR__.'/../vendor/metadata/src',
 
 	# Doctrine
 	'Gedmo'				=> $vendorPath . '/vendor/doctrine-extension/lib',

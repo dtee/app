@@ -1,5 +1,8 @@
 <?php
 
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
@@ -24,13 +27,13 @@ class AppKernel extends Kernel
             // new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
-            //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             //new Acme\FacebookBundle\FacebookBundle(),
             //new Acme\DemoBundle\AcmeDemoBundle(),
 
             # FOS Bundles
             new FOS\UserBundle\FOSUserBundle(),
-            // new FOS\FacebookBundle\FOSFacebookBundle(),
+            new FOS\FacebookBundle\FOSFacebookBundle(),
             // new FOS\TwitterBundle\FOSTwitterBundle(),
 
             # Odl bundles
@@ -48,8 +51,45 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
+    protected function initializeContainer() {
+        parent::initializeContainer();
+
+        $container = $this->container;
+        $domain = $container->getParameter('root_domain');
+        $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null;
+
+        if ($host && !endsWith($host, $domain)) {
+            $url = 'http://' . $domain;
+            $response = new RedirectResponse($url);
+            $response->send();
+            exit();
+        }
+    }
+
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
+        $host = $_SERVER['HTTP_HOST'];
+        // Load setttings
+        $files = explode('.', $host);
+        $finder = new Finder();
+        $configDir = __DIR__ . '/env';
+        $finder->in($configDir);
+        foreach ($files as $file) {
+            $finder->name("*{$file}*.yml");
+        }
+
+        if (count($finder) == 0) {
+            throw new \Exception('Env file not found.');
+        }
+
+        $config = array();
+        foreach ($finder as $file) {
+            $fileName = $file->getRealPath();
+            $loader->load($fileName);
+            break;
+        }
+
+        $this->envParams = $config;
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
 
