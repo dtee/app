@@ -1,0 +1,12 @@
+parameters:
+  root_domain: fuka.diversed.us
+  assets_base_urls:
+    - http://img.fuka.diversed.us
+    
+fos_facebook: 
+  file: %kernel.root_dir%/../vendor/facebook/src/facebook.php
+  alias: facebook
+  app_id: 223214071038703
+  secret: f814d30747c8d23a773e0d8277da75c8
+  cookie: true
+    

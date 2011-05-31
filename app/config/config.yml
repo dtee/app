@@ -8,10 +8,6 @@ parameters:
     database_name: symfony
     database_user: root
     database_password: ~
-    mailer_transport: smtp
-    mailer_host: localhost
-    mailer_user: ~
-    mailer_password: ~
     locale: en
     doctrine.odm.mongodb.default_document_manager: default
 
@@ -119,7 +115,6 @@ doctrine_mongodb:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
+    transport: gmail
+    username:  web@wooshed.com
+    password:  uWd8T%M2
