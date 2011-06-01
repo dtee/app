@@ -40,7 +40,8 @@ framework:
         
     annotations:
         cache:          file
-        
+    esi: { enabled: true }
+
 sensio_framework_extra: 
     router:  { annotations: true }
 
@@ -113,6 +114,13 @@ doctrine_mongodb:
                     type: annotation
                     dir: Documents/
 
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default: ~
+    mongodb:
+        default: ~
+        
 # Swiftmailer Configuration
 swiftmailer:
     transport: gmail

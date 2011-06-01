@@ -36,3 +36,8 @@ grid:
     resource: "@DtcGridBundle/Controller/GridController.php"
     type:     annotation
     prefix:  /grid
+    
+_internal:
+    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+    prefix:   /_internal
+    
