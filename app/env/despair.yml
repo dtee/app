@@ -1,10 +1,11 @@
 parameters:
-  root_domain: fuka.diversed.us
+  root_domain: despair.oodle.info
   assets_base_urls:
-    - http://img.fuka.diversed.us
+    - ~
+#    - http://img.despair.oodle.info/a/symfony
     
 fos_facebook: 
-  file: %kernel.root_dir%/../vendor/facebook/src/facebook.php
+  file: /service/web/_external/Facebook/php/facebook.php
   alias: facebook
   app_id: 223214071038703
   secret: f814d30747c8d23a773e0d8277da75c8
