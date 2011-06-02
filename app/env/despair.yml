@@ -1,8 +1,9 @@
 parameters:
+  exception_listener.controller: Odl\MarketplaceBundle\Listener
   root_domain: despair.oodle.info
   assets_base_urls:
-    - ~
-#    - http://img.despair.oodle.info/a/symfony
+#    - ~
+    - http://img.despair.oodle.info/a/symfony
     
 fos_facebook: 
   file: /service/web/_external/Facebook/php/facebook.php

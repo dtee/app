@@ -88,3 +88,9 @@
 [submodule "vendor/metadata"]
 	path = vendor/metadata
 	url = http://github.com/schmittjoh/metadata.git
+[submodule "src/Odl/RecommendBundle"]
+	path = src/Odl/RecommendBundle
+	url = ssh://git@wooshed.com/~/recommend.git
+[submodule "src/Odl/MarketplaceBundle"]
+	path = src/Odl/MarketplaceBundle
+	url = ssh://git@wooshed.com/~/odl_market.git

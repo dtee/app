@@ -42,6 +42,7 @@ class AppKernel extends Kernel
             new Odl\AuthBundle\OdlAuthBundle(),
             new Odl\ShadowBundle\ShadowBundle(),
             new Odl\PlacesBundle\OdlPlacesBundle(),
+            new Odl\MarketplaceBundle\OdlMarketplaceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
