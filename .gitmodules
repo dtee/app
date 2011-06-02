@@ -1,12 +1,12 @@
 [submodule "src/Odl/ShadowBundle"]
 	path = src/Odl/ShadowBundle
-	url = git://github.com/dtee/ShadowBundle.git
+	url = git://git@github.com/dtee/ShadowBundle.git
 [submodule "src/Odl/AuthBundle"]
 	path = src/Odl/AuthBundle
-	url = git://github.com/dtee/auth.git
+	url = git://git@github.com/dtee/auth.git
 [submodule "src/Odl/AssetBundle"]
 	path = src/Odl/AssetBundle
-	url = git://github.com/dtee/asset.git
+	url = git://git@github.com/dtee/asset.git
 [submodule "src/Odl/PlacesBundle"]
 	path = src/Odl/PlacesBundle
 	url = ssh://git@wooshed.com/~/places.git
@@ -87,7 +87,7 @@
 	url = git://github.com/doctrine/data-fixtures.git
 [submodule "vendor/metadata"]
 	path = vendor/metadata
-	url = http://github.com/schmittjoh/metadata.git
+	url = git://github.com/schmittjoh/metadata.git
 [submodule "src/Odl/RecommendBundle"]
 	path = src/Odl/RecommendBundle
 	url = ssh://git@wooshed.com/~/recommend.git
