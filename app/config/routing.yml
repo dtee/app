@@ -31,6 +31,11 @@ _places:
     resource: "@OdlPlacesBundle/Controller/MainController.php"
     type:     annotation
     prefix:  /places
+    
+recommend:
+    resource: "@OdlRecommendBundle/Controller/RecommendController.php"
+    type:     annotation
+    prefix:  /r
 
 grid:
     resource: "@DtcGridBundle/Controller/GridController.php"

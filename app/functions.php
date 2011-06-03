@@ -29,7 +29,7 @@ if (!function_exists('v'))
 			$traces = debug_backtrace();
 			foreach ($traces as $index => $trace)
 			{
-				if ($index <= 0 || !isset($trace['file']))
+				if ($index <= 0 && !isset($trace['file']))
 				{
 					var_dump("{$trace['file']} (line {$trace['line']})");
 					continue;

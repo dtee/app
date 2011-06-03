@@ -13,16 +13,21 @@ parameters:
             password:         null
             host:             wii
     mongodb_connections: 
+#        mongo_recommend: 
+#            server: mongodb://localhost:27017
+#            options:
+#                connect: true
         default:
             server: mongodb://localhost:27017
             options:
                 connect: true
+                
     mongodb_managers:
-        mongo_recommend: 
-            mappings:
-                OdlRecommendBundle:
-                    type: annotation
-                    dir: Documents/
+#        mongo_recommend: 
+#            mappings:
+#                OdlRecommendBundle:
+#                    type: annotation
+#                    dir: Documents/
         default:
 #            auto_mapping: true
             mappings:
@@ -33,6 +38,9 @@ parameters:
                     type: annotation
                     dir: Documents/
                 OdlPlacesBundle:
+                    type: annotation
+                    dir: Documents/
+                OdlRecommendBundle:
                     type: annotation
                     dir: Documents/
                     
