@@ -2,7 +2,8 @@ places:
   type: sprite
   gutter: 5
   resources: 
-    - /service/img/sprites/tetris/
+    - "@OdlPlacesBundle/Resources/public/img/fb/"
+    - "@OdlPlacesBundle/Resources/public/img/find/"
 
 css_lib:
   type: css
