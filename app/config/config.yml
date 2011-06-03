@@ -1,16 +1,8 @@
 imports:
     - { resource: security.yml }
+    - { resource: default_parameters.yml }
+    - { resource: parameters.php }
     
-parameters:
-    csrf_secret: test-market
-    database_driver: pdo_mysql
-    database_host: localhost
-    database_name: symfony
-    database_user: root
-    database_password: ~
-    locale: en
-    doctrine.odm.mongodb.default_document_manager: default
-
 services:
     annotations.reader: 
         class: %annotations.reader.class%
@@ -40,7 +32,7 @@ framework:
         
     annotations:
         cache:          file
-    esi: { enabled: true }
+    esi: { enabled: false }
 
 sensio_framework_extra: 
     router:  { annotations: true }
@@ -68,15 +60,18 @@ fos_user:
 doctrine:
     dbal:
         default_connection:       default
-        connections:
-            default:
-                dbname:           test
-                user:             oodle
-                password:         null
-                host:             wii
+        connections:              %db_connections%
     orm:
         auto_mapping: true
-                 
+
+doctrine_mongodb:
+    default_connection: default
+    default_database: default
+    auto_generate_hydrator_classes: true
+    auto_generate_proxy_classes: true
+    connections: %mongodb_connections%
+    document_managers: %mongodb_managers%
+
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
@@ -90,36 +85,11 @@ twig:
 
 odl_asset:
     asset_resource: "%kernel.root_dir%/config/assets.yml" 
-
-doctrine_mongodb:
-    default_database: hello_%kernel.environment%
-    auto_generate_hydrator_classes: true
-    auto_generate_proxy_classes: true
-    connections:
-        default:
-            server: mongodb://localhost:27017
-            options:
-                connect: true
-    document_managers:  
-        default:
-#            auto_mapping: true
-            mappings:
-                ShadowBundle:
-                    type: annotation
-                    dir: Documents/
-                OdlAuthBundle:
-                    type: annotation
-                    dir: Documents/
-                OdlPlacesBundle:
-                    type: annotation
-                    dir: Documents/
-
+    
 stof_doctrine_extensions:
     default_locale: en_US
-    orm:
-        default: ~
-    mongodb:
-        default: ~
+    orm: ~
+    mongodb: ~
         
 # Swiftmailer Configuration
 swiftmailer:

@@ -1,0 +1,38 @@
+parameters:
+    csrf_secret: test-market
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_name: symfony
+    database_user: root
+    database_password: ~
+    locale: en
+    db_connections: 
+        default:
+            dbname:           test
+            user:             oodle
+            password:         null
+            host:             wii
+    mongodb_connections: 
+        default:
+            server: mongodb://localhost:27017
+            options:
+                connect: true
+    mongodb_managers:
+        mongo_recommend: 
+            mappings:
+                OdlRecommendBundle:
+                    type: annotation
+                    dir: Documents/
+        default:
+#            auto_mapping: true
+            mappings:
+                ShadowBundle:
+                    type: annotation
+                    dir: Documents/
+                OdlAuthBundle:
+                    type: annotation
+                    dir: Documents/
+                OdlPlacesBundle:
+                    type: annotation
+                    dir: Documents/
+                    

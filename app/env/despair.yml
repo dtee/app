@@ -3,12 +3,11 @@ parameters:
   root_domain: despair.oodle.info
   assets_base_urls:
 #    - ~
-    - http://img.despair.oodle.info/a/symfony
-    
+    - http://img.despair.oodle.info
+
 fos_facebook: 
-  file: /service/web/_external/Facebook/php/facebook.php
+  file: /service/web/external/facebook/facebook.php
   alias: facebook
   app_id: 223214071038703
   secret: f814d30747c8d23a773e0d8277da75c8
   cookie: true
-    

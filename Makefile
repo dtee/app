@@ -1,6 +1,6 @@
 include ../Makefile.common
 
-IMG_PATH = /service/img/a/symfony
+IMG_PATH = /service/img/
 
 all: install
 
