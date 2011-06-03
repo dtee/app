@@ -9,37 +9,34 @@ parameters:
     db_connections: 
         default:
             dbname:           test
-            user:             oodle
+            user:             root
             password:         null
-            host:             wii
+            host:             localhost
     mongodb_connections: 
-#        mongo_recommend: 
-#            server: mongodb://localhost:27017
-#            options:
-#                connect: true
+        mongo_recommend: 
+            server: mongodb://localhost:27017
+            options:
+                connect: true
         default:
             server: mongodb://localhost:27017
             options:
                 connect: true
-                
+
     mongodb_managers:
-#        mongo_recommend: 
-#            mappings:
-#                OdlRecommendBundle:
-#                    type: annotation
-#                    dir: Documents/
         default:
 #            auto_mapping: true
             mappings:
-                ShadowBundle:
+                OdlAuthBundle:
                     type: annotation
                     dir: Documents/
-                OdlAuthBundle:
+                ShadowBundle:
                     type: annotation
                     dir: Documents/
                 OdlPlacesBundle:
                     type: annotation
                     dir: Documents/
+        mongo_recommend: 
+            mappings:
                 OdlRecommendBundle:
                     type: annotation
                     dir: Documents/
