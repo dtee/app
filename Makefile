@@ -18,6 +18,7 @@ cache-install:
 	sudo chmod 777 /tmp/symfony-cache -R
 	sudo chmod 777 /service/logs -R
 	./bin/build_bootstrap.php
+	./app/console cache:warmup
 	
 clean: 
 	sudo rm -rf /tmp/symfony-cache 
