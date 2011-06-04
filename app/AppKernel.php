@@ -71,28 +71,6 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $host = $_SERVER['HTTP_HOST'];
-        // Load setttings
-        $files = explode('.', $host);
-        $finder = new Finder();
-        $configDir = __DIR__ . '/env';
-        $finder->in($configDir);
-        foreach ($files as $file) {
-            $finder->name("*{$file}*.yml");
-        }
-
-        if (count($finder) == 0) {
-            throw new \Exception('Env file not found.');
-        }
-
-        $config = array();
-        foreach ($finder as $file) {
-            $fileName = $file->getRealPath();
-            $loader->load($fileName);
-            break;
-        }
-
-        $this->envParams = $config;
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
 

@@ -1,5 +1,54 @@
 <?php
+use Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Yaml\Parser;
+use Symfony\Component\Finder\Finder;
+
 global $context;
+$confFile = '/service/conf/local.yml';
+$domain= null;
+if (file_exists($confFile)) {
+    $config = Yaml::load($confFile);
+    if (isset($config['domain'])) {
+        $domain = $config['domain'];
+    }
+    else {
+        throw new \Exception("Domain is not found in config {$confFile}");
+    }
+}
+elseif ($context)
+{
+    $config = $context->getResources()->getConfig();
+    $domain = $config->getValue('globals', 'domain');
+}
+elseif (isset($_SERVER['HTTP_HOST'])) {
+    $domain = $_SERVER['HTTP_HOST'];
+}
+
+if (!$domain) {
+    // Throw new exception
+    throw new \Exception("{$confFile} with domain information is not found");
+}
+else {
+    // Read domain specific config
+    $files = explode('.', $domain);
+    $finder = new Finder();
+    $configDir = __DIR__ . '/../env';
+    $finder->in($configDir);
+    foreach ($files as $file) {
+        $finder->name("*{$file}*.yml");
+    }
+
+    if (count($finder) == 0) {
+        throw new \Exception('Env file not found.');
+    }
+
+    $config = array();
+    foreach ($finder as $file) {
+        $fileName = $file->getRealPath();
+        $loader->import($fileName);
+        break;
+    }
+}
 
 if ($context) {
     $config = $context->getResources()->getConfig();
