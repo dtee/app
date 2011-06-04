@@ -24,7 +24,6 @@ parameters:
 
     mongodb_managers:
         default:
-#            auto_mapping: true
             mappings:
                 OdlAuthBundle:
                     type: annotation

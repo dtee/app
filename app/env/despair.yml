@@ -1,8 +1,6 @@
 parameters:
-  exception_listener.controller: Odl\MarketplaceBundle\Listener
   root_domain: despair.oodle.info
   assets_base_urls:
-#    - ~
     - http://img.despair.oodle.info
 
 fos_facebook: 
