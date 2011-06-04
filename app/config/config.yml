@@ -32,7 +32,6 @@ framework:
         
     annotations:
         cache:          file
-    esi: { enabled: false }
 
 sensio_framework_extra: 
     router:  { annotations: true }
