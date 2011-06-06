@@ -33,9 +33,6 @@ framework:
     annotations:
         cache:          file
 
-sensio_framework_extra: 
-    router:  { annotations: true }
-
 jms_security_extra:
     # If you set-up your controllers as services, you must set this to false;
     # otherwise your security checks will be performed twice.
@@ -82,6 +79,9 @@ twig:
         g_facebook: @facebook
         g_layout: ShadowBundle::layout.html.twig
 
+sensio_framework_extra:
+    view: {annotations: true}
+    
 odl_asset:
     asset_resource: "%kernel.root_dir%/config/assets.yml" 
     

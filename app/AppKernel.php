@@ -26,8 +26,8 @@ class AppKernel extends Kernel
             // Handle assets
             // new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+
             //new Acme\FacebookBundle\FacebookBundle(),
             //new Acme\DemoBundle\AcmeDemoBundle(),
 
@@ -62,7 +62,7 @@ class AppKernel extends Kernel
         $host = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null;
 
         if ($host && !endsWith($host, $domain)) {
-            $url = 'http://' . $domain;
+            $url = 'http://' . $domain . $_SERVER['REQUEST_URI'];
             $response = new RedirectResponse($url);
             $response->send();
             exit();
