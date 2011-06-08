@@ -16,7 +16,6 @@ framework:
         enabled: true
     router:        
         resource: "%kernel.root_dir%/config/routing.yml"
-        cache_warmer:   false
     validation:    { enabled: true, enable_annotations: true }
     form:
         enabled: true
@@ -49,9 +48,7 @@ jms_security_extra:
 fos_user:
     db_driver: mongodb
     firewall_name: all
-    class:
-        model:
-            user: Odl\AuthBundle\Documents\UserAuth
+    user_class: Odl\AuthBundle\Documents\UserAuth
 
 doctrine:
     dbal:

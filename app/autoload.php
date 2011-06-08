@@ -43,10 +43,6 @@ $loader->registerPrefixes(array(
     'Swift_'           => $vendorPath . '/vendor/swiftmailer/lib/classes',
 ));
 
-$loader->registerPrefixFallback(array(
-    $vendorPath . '/vendor/symfony/src/Symfony/Component/Locale/Resources/stubs',
-	$vendorPath . '/vendor/twig_extension/lib',
-));
 $loader->register();
 
 $oneOffs = array(

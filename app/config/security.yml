@@ -20,7 +20,7 @@ security:
                 admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
         mongo_provider:
-           id: auth.mongodb.username_password_provider
+           id: fos_user.user_manager
            
     firewalls:
         profiler:
