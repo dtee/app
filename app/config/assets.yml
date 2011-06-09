@@ -10,33 +10,48 @@ css_lib:
   less_import_paths: 
     - "@OdlAssetBundle/Resources/public/css/lib/less"
   resources:
+    # blue print
     - "@OdlAssetBundle/Resources/public/css/lib/blue_print/screen.css"
+    
+    # jquery UI
     - 
       source_path: /bundles/odlasset/css/lib/jquery.ui/smoothness/
       local: "@OdlAssetBundle/Resources/public/css/lib/jquery.ui/smoothness/jquery-ui-1.8.13.custom.css"
-    - "@OdlAssetBundle/Resources/public/css/lib/jquery.jqGrid/ui.jqgrid.css"
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/facelist_2-0.css"
+    
+    # jquery jqGrid
     - "@OdlAssetBundle/vendor/js/jquery-jqGrid/css/ui.jqgrid.css"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/facelist_2-0.css"
     - "@OdlAuthBundle/Resources/public/css/form.less"
  
 js_lib:
   type: javascript
   resources:
     # jquery is needed first
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery/jquery-1.5.2.js"
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-1.4.4.min.js"
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ui/jquery-ui-1.8.11.custom.min.js"
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.js"
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.floatError.js"
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery.json/jquery.json-2.2.js"
-    - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/jquery.facelist_2-0.js"
-    - "@OdlAssetBundle/Resources/public/js/lib/highcharts/js/highcharts.src.js"
+    - "@OdlAssetBundle/vendor/js/highcharts/lib/jquery-1.5.2.js"
+    
+    # highcharts
+    - "@OdlAssetBundle/vendor/js/highcharts/js/highcharts.src.js"
+    
+    # jquery UI - customize jQuery UI
+    - "@OdlAssetBundle/vendor/js/jquery-ui/ui/jquery.ui.core.js"
+    - "@OdlAssetBundle/vendor/js/jquery-ui/ui/jquery.ui.widget.js"
+    - "@OdlAssetBundle/vendor/js/jquery-ui/ui/jquery.ui.button.js"
+    - "@OdlAssetBundle/vendor/js/jquery-ui/ui/jquery.ui.position.js"
+    - "@OdlAssetBundle/vendor/js/jquery-ui/ui/jquery.ui.menu.js"
+    - "@OdlAssetBundle/vendor/js/jquery-ui/ui/jquery.ui.autocomplete.js"
+    - "@OdlAssetBundle/vendor/js/jquery-ui/ui/jquery.ui.tabs.js"
     
     # jquery jqGrid
     - "@OdlAssetBundle/vendor/js/jquery-jqGrid/js/i18n/grid.locale-en.js"
     - "@OdlAssetBundle/vendor/js/jquery-jqGrid/js/grid.base.js"
     
-    # AuthBundle for login/logout and facebook
+    # jquery Mobile?
+    
+    # Oneoff Libraries
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.json/jquery.json-2.2.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/jquery.facelist_2-0.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.js"
+    - "@OdlAssetBundle/Resources/public/js/lib/jquery.ajaxform/jquery.ajaxform.floatError.js"
     - "@OdlAuthBundle/Resources/public/js/auth.js"
       
 shadow_css:
