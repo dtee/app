@@ -28,6 +28,9 @@ parameters:
                 OdlAuthBundle:
                     type: annotation
                     dir: Documents/
+                DtcMarketBundle:
+                    type: annotation
+                    dir: Documents/
                 ShadowBundle:
                     type: annotation
                     dir: Documents/

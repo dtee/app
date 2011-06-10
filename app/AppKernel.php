@@ -38,6 +38,8 @@ class AppKernel extends Kernel
 
             # Odl bundles
             new Dtc\GridBundle\DtcGridBundle(),
+            new Dtc\MarketBundle\DtcMarketBundle(),
+
             new Odl\AssetBundle\OdlAssetBundle(),
             new Odl\AuthBundle\OdlAuthBundle(),
             new Odl\ShadowBundle\ShadowBundle(),
