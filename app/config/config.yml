@@ -85,7 +85,8 @@ odl_asset:
 stof_doctrine_extensions:
     default_locale: en_US
     orm: ~
-    mongodb: ~
+    mongodb: 
+        default: ~    # register mongodb listeners to insert timestamp
         
 # Swiftmailer Configuration
 swiftmailer:

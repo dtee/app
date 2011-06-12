@@ -51,6 +51,11 @@ market:
     type:     annotation
     prefix:  /market
     
+portfolio:
+    resource: "@DtcMarketBundle/Controller/PortfolioController.php"
+    type:     annotation
+    prefix:  /portfolio
+    
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #    prefix:   /_internal

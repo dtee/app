@@ -47,6 +47,10 @@ js_lib:
     
     # jquery Mobile?
     
+    # jquery File upload
+    - "@OdlAssetBundle/vendor/js/jquery-file-upload/jquery.iframe-transport.js"
+    - "@OdlAssetBundle/vendor/js/jquery-form/jquery.form.js"
+    
     # Oneoff Libraries
     - "@OdlAssetBundle/Resources/public/js/lib/jquery.json/jquery.json-2.2.js"
     - "@OdlAssetBundle/Resources/public/js/lib/jquery.faceList/jquery.facelist_2-0.js"
