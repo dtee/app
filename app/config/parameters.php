@@ -7,7 +7,7 @@ global $context;
 $confFile = '/service/conf/local.yml';
 $domain= null;
 if (file_exists($confFile)) {
-    $config = Yaml::load($confFile);
+    $config = Yaml::parse($confFile);
     if (isset($config['domain'])) {
         $domain = $config['domain'];
     }

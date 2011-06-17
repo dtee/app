@@ -81,7 +81,7 @@
 	url = git://github.com/doctrine/mongodb-odm.git
 [submodule "vendor/symfony"]
 	path = vendor/symfony
-	url = git://github.com/dtee/symfony.git
+	url = git://github.com/symfony/symfony.git
 [submodule "vendor/doctrine/fixtures"]
 	path = vendor/doctrine/fixtures
 	url = git://github.com/doctrine/data-fixtures.git

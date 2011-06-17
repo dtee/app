@@ -69,9 +69,9 @@ doctrine_mongodb:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-    extensions:
-        - twig.extension.debug
-        - twig.extension.text
+#    extensions:
+#        - twig.extension.debug
+#        - twig.extension.text
     globals: 
         g_facebook: @facebook
         g_layout: ShadowBundle::layout.html.twig
