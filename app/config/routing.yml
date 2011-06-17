@@ -20,6 +20,11 @@ shadow_char:
     resource: "@ShadowBundle/Controller/CharacterController.php"
     type:     annotation
     prefix:  /shadow/char
+    
+shadow_game:
+    resource: "@ShadowBundle/Controller/GameController.php"
+    type:     annotation
+    prefix:  /shadow/game
  
 _auth: 
     resource: "@OdlAuthBundle/Controller/AuthController.php"
@@ -55,7 +60,7 @@ portfolio:
     resource: "@DtcMarketBundle/Controller/PortfolioController.php"
     type:     annotation
     prefix:  /portfolio
-    
+
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #    prefix:   /_internal
