@@ -94,3 +94,6 @@
 [submodule "src/Odl/MarketplaceBundle"]
 	path = src/Odl/MarketplaceBundle
 	url = ssh://git@wooshed.com/~/odl_market.git
+[submodule "vendor/bundles/FOS/CommentBundle"]
+	path = vendor/bundles/FOS/CommentBundle
+	url = git://github.com/FriendsOfSymfony/CommentBundle.git
