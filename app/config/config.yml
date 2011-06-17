@@ -8,7 +8,13 @@ services:
         class: %annotations.reader.class%
         calls:
             - [ setAutoloadAnnotations, [ true ] ]
-    
+    twig.extension.debug:
+        class: Twig_Extensions_Extension_Debug
+        tags: [{ name: twig.extension }]
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags: [{ name: twig.extension }]
+
 framework:
     charset:       UTF-8
     secret: "%csrf_secret%"
