@@ -50,13 +50,8 @@ else {
     }
 }
 
-if ($context) {
-    $config = $context->getResources()->getConfig();
-
-    $container->set('odl.context', $context);
-    $container->set('odl.resources', $context->getResources());
-    $container->set('odl.resources.config', $config);
-
+global $config;
+if (isset($config)) {
     // Register dbal connections
     $port = $config->getValue('globals', 'memcache_port');
     $hosts = $config->getValue('globals', 'memcache_machines');
@@ -66,8 +61,6 @@ if ($context) {
         $databases = array_merge($container->getParameter('db_connections'), $databases);
     }
     $container->setParameter('db_connections', $databases);
-
-    // Register entity manager
 
     // Register mongodb connections
     $connections = $config->getMongoDBConnection();
@@ -97,9 +90,5 @@ if ($context) {
     }
 
     $container->setParameter('mongodb_connections', $managedConnections);
-
-    // Set services
-    $container->set('odl.context', $context);
-    $container->set('odl.resources', $context->getResources());
-    $container->set('odl.resources.config', $config);
+    $container->setParameter('odl.path.service_home', SERVICE_HOME);
 }

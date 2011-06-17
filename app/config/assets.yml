@@ -78,7 +78,10 @@ shadow_js:
   type: javascript
   resources:
     - "@ShadowBundle/Resources/public/js/main.js"
-  
+#    -
+#      route: "odl_shadow_main_js"
+#      route_params: ~
+
 places_js:
   type: javascript
   resources:

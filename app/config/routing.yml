@@ -1,7 +1,7 @@
-home: 
-    pattern:   /
-    defaults:  { _controller: ShadowBundle:Main:index }
-    
+#home: 
+#    pattern:   /
+#    defaults:  { _controller: ShadowBundle:Main:index }
+
 login: 
     pattern:   /login
     defaults:  { _controller: OdlAuthBundle:Auth:login }
@@ -55,6 +55,11 @@ portfolio:
     resource: "@DtcMarketBundle/Controller/PortfolioController.php"
     type:     annotation
     prefix:  /portfolio
+
+odl: 
+    resource: "@OdlMarketplaceBundle/Controller/OdlController.php"
+    type:     annotation
+    prefix:  /
     
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
